@@ -5,9 +5,9 @@ Rails.application.routes.draw do
     root to: "pages#landing", as: "landing"
   end
 
-  authenticated :user do
+  # authenticated :user do
     root to: 'pages#home', as: "home"
-  end
+  # end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
@@ -27,4 +27,5 @@ Rails.application.routes.draw do
   resource :dashboard, only: [ :show ]
   resource :profile, only: [ :edit, :update ]
 
+  get 'test', to: 'pages#buttplug'
 end
