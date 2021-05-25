@@ -1,9 +1,9 @@
 <div class="container story-card col-9 d-flex">
   <div class="story-card-row">
     <i class="story-card-icone far fa-bookmark"></i>
-    <h1><%= story.title %></h1>
+    <h1><%= story.title.capitalize %></h1>
 
-    <h4>By Author</h4>
+    <h4>By <%= story.author.username.capitalize %></h4>
     <div class="story-card-text">
       <p class="story-card-p"><%= story.content %></p>
     </div>
@@ -13,21 +13,24 @@
     <div class="story-card-infos">
       <div class="d-flex justify-content-between">
         <div class="intensity">
-          <i class="intensity-icone fas fa-heart"></i>
-          <i class="intensity-icone fas fa-heart"></i>
-          <i class="intensity-icone fas fa-heart"></i>
-          <i class="intensity-icone far fa-heart"></i>
-          <i class="intensity-icone far fa-heart"></i>
+          <% if story.intensity %>
+            <% (story.intensity).times do %>
+              <i class="intensity-icone fas fa-heart"></i>
+            <% end %>
+            <% (5-story.intensity).times do %>
+              <i class="intensity-icone far fa-heart"></i>
+            <% end %>
+          <% end %>
         </div>
         <div class="time d-flex">
           <i class="p-1 far fa-clock"></i>
-          <p>30min</p>
+          <p><%= story.reading_time %>min</p>
         </div>
       </div>
       <div class="d-flex justify-content-between">
-        <div class="tag">#tag1</div>
-        <div class="tag">#tag2</div>
-        <div class="tag">#tag3</div>
+        <% story.tags.each do |tag| %>
+          <div class="tag"><%= tag %></div>
+        <% end %>
       </div>
     </div>
   </div>
