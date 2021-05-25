@@ -5,10 +5,10 @@ Story.destroy_all
 User.destroy_all
 
 #Bree is the reader, others are authors
-bree = User.create!(age: 48, username: "BreeVDK", email: "bree.dh@gmail.com", password: "12345", whitelist: ["Public", "Romance", "Fantasy"], blacklist: ["Furry", "Accounting", "Leather"])
-granny = User.create!(age: 74, username: "GrannySmith", email: "aglae.sydonie@gmail.com", password: "12345", whitelist: ["Furry", "Romance", "BDSM"], blacklist: ["Public", "Horror", "Threesome"])
-brigitte = User.create!(age: 68, username: "BrigitteM", email: "brigitte.m@elysee.fr", password: "12345", whitelist: ["LGBTQ+", "Leather", "Accounting"], blacklist: ["Threesome", "Feet", "Furry"])
-nathalie = User.create!(age: 54, username: "BatNath", email: "nath.richon@gmail.com", password: "12345", whitelist: ["Romance", "Fantasy"], blacklist: ["Furry", "Accounting", "Leather"])
+bree = User.create!(age: 48, username: "BreeVDK", email: "bree.dh@gmail.com", password: "123456", whitelist: ["Public", "Romance", "Fantasy"], blacklist: ["Furry", "Accounting", "Leather"])
+granny = User.create!(age: 74, username: "GrannySmith", email: "aglae.sydonie@gmail.com", password: "123456", whitelist: ["Furry", "Romance", "BDSM"], blacklist: ["Public", "Horror", "Threesome"])
+brigitte = User.create!(age: 68, username: "BrigitteM", email: "brigitte.m@elysee.fr", password: "123456", whitelist: ["LGBTQ+", "Leather", "Accounting"], blacklist: ["Threesome", "Feet", "Furry"])
+nathalie = User.create!(age: 54, username: "BatNath", email: "nath.richon@gmail.com", password: "123456", whitelist: ["Romance", "Fantasy"], blacklist: ["Furry", "Accounting", "Leather"])
 
 # Granny's stories are the ones recommended for latest chapters,
 # she's followed by Bree so the last three chapters she published
@@ -94,12 +94,12 @@ story_nath_3 = Story.create!(
   content: "When he comes away I catch his gaze. His eyes look unfocussed – cross-eyed with lust. “I’ve missed you, I’ve missed you so much.” His expression a strange blend of pain and elation, whispered words born of desperate need. He swiftly stretches to cover my body with his, kissing me wildly.  He raids my mouth mercilessly, our arms and legs tangling and writhing, taking in the exquisite pleasure of intimate contact.
 
   He rolls taking me with him and we pause for air, our breaths mingling and faces flushed. With my body on top of his I stroke my hand over the sprinkling of stubble, reacquainting myself with every curve and dip of his face. “You are so precious, thank you for taking another chance on me.”
-  
+
   Another low hum is his reply and he closes his eyes as my gratitude sluices over him – clearly striking a cord. “Come here.” It’s a carnal command but I don’t understand and I raise an unsure brow. Where does he want me to go, I’m already here?
-  
+
   “Come, sit here, on my chest.” He pats his sternum. His silky voice is dripping with erotic promise.
-  
+
   I scoot up, eager to find out what passionate delight he has in store for me. It only takes a second for me to grasp the nature of the deeply intimate act he has in mind and I gnaw at my lip, my coyness getting the better of me.
-  
+
   My legs are bent with my knees resting on either side of his head. My bottom sits on his chest, taking my weight which leaves my secret opening utterly gaping and vulnerable, not to mention very close to his sinful mouth. I can feel his breath on me, fluttering and making my heart stutter."
 )

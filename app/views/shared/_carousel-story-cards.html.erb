@@ -1,7 +1,7 @@
 <div class="slider">
   <div class="slides">
-    <%= render "shared/story-card" %>
-    <%= render "shared/story-card" %>
-    <%= render "shared/story-card" %>
+    <% stories.each do |story| %>
+      <%= render "shared/story-card", story: story %>
+    <% end %>
   </div>
 </div>

@@ -1,10 +1,11 @@
 <div class="container story-card col-9 d-flex">
   <div class="story-card-row">
     <i class="story-card-icone far fa-bookmark"></i>
-    <h1>Main title</h1>
+    <h1><%= story.title %></h1>
+
     <h4>By Author</h4>
     <div class="story-card-text">
-      <p class="story-card-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras est nisl, semper ultrices mauris sit amet, semper consectetur ante. Vivamus placerat, risus eget placerat lacinia, nibh neque elementum elit, nec dignissim nisi sem non magna. Suspendisse maximus dui id justo molestie rhoncus.</p>
+      <p class="story-card-p"><%= story.content %></p>
     </div>
   </div>
 
