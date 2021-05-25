@@ -33,7 +33,7 @@
   };
   runEmbeddedConnectionExample();
 
-  <%# const runWebsocketConnectionExample = async () => {
+  const runWebsocketConnectionExample = async () => {
     // Instantiate our wasm module. This only needs to be done once. If you did it
     // elsewhere, ignore this.
     await Buttplug.buttplugInit();
@@ -75,7 +75,7 @@
     // And now we disconnect as usual
     await client.disconnect();
   };
-  runWebsocketConnectionExample(); %>
+  runWebsocketConnectionExample();
 
   async function runDeviceEnumerationExample() {
     // Instantiate our wasm module. This only needs to be done once. If you did it
@@ -159,5 +159,5 @@
 
   ButtplugErrors();
 }
-  runErrorExample();
+  //runErrorExample();
 </script>
