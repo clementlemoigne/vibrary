@@ -1,13 +1,17 @@
-.navbar {
+$rose: #edc1dc;
+
+.navbar-container {
   position: fixed;
   bottom: 0px;
-  width: 100%;
-  height: 64px;
-  justify-content: space-between;
-  flex-grow: 0;
-  border-top: 0.5mm solid rosybrown;
+  height: 80px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar {
+  border-top: 0.5mm solid $rose;
+
+  .fas {
+    font-size: xx-large;
+    color: $rose;
+    margin: 0 auto;
+  }
 }
