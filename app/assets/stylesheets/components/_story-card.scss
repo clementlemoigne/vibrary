@@ -1,0 +1,65 @@
+.story-card {
+  height: 40vh;
+  border: 0.5mm solid $rose;
+  padding: 0;
+  border-radius: 8px;
+  box-shadow: 1px 1px 4px rgba(218, 221, 223, 0.4);
+  flex-direction: column;
+}
+
+.story-card-row {
+  height: 68%;
+  width: 100%;
+  padding: 16px;
+  position: relative;
+
+  .story-card-icone {
+    position: absolute;
+    right: 34px;
+    top: 28px;
+    font-size: x-large;
+  }
+
+  .story-card-text {
+    height: 62%;
+  }
+
+  h1 {
+    font-family: 'Poppins';
+    font-weight: lighter;
+    font-size: xx-large;
+    margin: 0;
+  }
+  h4 {
+    font-family: 'Poppins';
+    font-size: larger;
+    margin-bottom: 10px;
+  }
+  .story-card-p {
+    margin-top: 16px;
+    font-family: 'Poppins';
+    font-weight: lighter;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 100%;
+  }
+}
+
+.story-card-infos {
+  height: 100%;
+  padding: 0 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around
+}
+
+.tag {
+  background-color: $rose;
+  padding: 2px 8px;
+  border-radius: 16px;
+  color: white;
+}
+
+.intensity-icone {
+  color: $rose;
+}
