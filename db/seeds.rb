@@ -1,3 +1,5 @@
+require 'faker'
+
 Reaction.destroy_all
 Favorite.destroy_all
 FavoriteAuthor.destroy_all
@@ -9,6 +11,13 @@ bree = User.create!(age: 48, username: "BreeVDK", email: "bree.dh@gmail.com", pa
 granny = User.create!(age: 74, username: "GrannySmith", email: "aglae.sydonie@gmail.com", password: "12345", whitelist: ["Furry", "Romance", "BDSM"], blacklist: ["Public", "Horror", "Threesome"])
 brigitte = User.create!(age: 68, username: "BrigitteM", email: "brigitte.m@elysee.fr", password: "12345", whitelist: ["LGBTQ+", "Leather", "Accounting"], blacklist: ["Threesome", "Feet", "Furry"])
 nathalie = User.create!(age: 54, username: "BatNath", email: "nath.richon@gmail.com", password: "12345", whitelist: ["Romance", "Fantasy"], blacklist: ["Furry", "Accounting", "Leather"])
+
+# Random Users, they're just here to allow us to add reactions to our stories.
+user1 = User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty")
+user2 = User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty")
+user3 = User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty")
+user4 = User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty")
+user5 = User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty")
 
 # Granny's stories are the ones recommended for latest chapters,
 # she's followed by Bree so the last three chapters she published
