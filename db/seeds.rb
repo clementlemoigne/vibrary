@@ -102,8 +102,9 @@ story_nath_2 = Story.create!(
 story_nath_3 = Story.create!(
   author: nathalie,
   tags: ["BDSM", "Romance"],
-  vibration_compatibility: false,
+  vibration_compatibility: true,
   reading_time: 90,
+  intensity: 4,
   title: "Something Gray",
   content: "When he comes away I catch his gaze. His eyes look unfocussed – cross-eyed with lust. “I’ve missed you, I’ve missed you so much.” His expression a strange blend of pain and elation, whispered words born of desperate need. He swiftly stretches to cover my body with his, kissing me wildly.  He raids my mouth mercilessly, our arms and legs tangling and writhing, taking in the exquisite pleasure of intimate contact.
 
