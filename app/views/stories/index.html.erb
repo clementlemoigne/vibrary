@@ -1,0 +1,27 @@
+<div class="d-flex justify-content-center align-items-center sticky-top bg-white">
+  <h1 class="page-title">Search</h1>
+</div>
+
+<div>
+    <datalist id="search-bar">
+        <option>BDSM</option>
+        <option>Romance</option>
+    </datalist>
+    <input  autoComplete="on" list="search-bar" placeholder="What are you looking for?"/>
+</div>
+
+<div class="content">
+  <div id="recommended" >
+    <h2>Recommended for you</h2>
+    <%= render "shared/carousel-story-cards", stories: @stories %>
+  </div>
+</div>
+
+<div class="content">
+  <div id="recommended" >
+    <h2>Best rated</h2>
+    <%= render "shared/carousel-story-cards", stories: @stories %>
+  </div>
+</div>
+
+<%= render "shared/navbar" %>

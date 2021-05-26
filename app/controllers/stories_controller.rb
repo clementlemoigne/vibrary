@@ -1,6 +1,6 @@
 class StoriesController < ApplicationController
-  def index
-    @stories = Story.all
-  end
 
+  def index
+    @stories = policy_scope(Story).order(created_at: :desc)
+  end
 end
