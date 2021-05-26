@@ -62,18 +62,23 @@
 
 
       const btn_on = document.getElementById("vibe-btn-on");
-      await btn_on.addEventListener("click", async (event) => {
-        event.preventDefault();
-        console.log("coucou");
-
-        try {
-          await device.vibrate(0.2);
-        } catch (e) {
-          console.log(e);
-          if (e instanceof Buttplug.ButtplugDeviceError) {
-            console.log("got a device error!");
+      await window.addEventListener('scroll', async (event) => {
+        //event.preventDefault();
+        //console.log("coucou");
+        positionVibe = document.querySelector(".vibe").getBoundingClientRect();
+        positionYellow = document.querySelector(".div-yellow").getBoundingClientRect();
+        if (positionVibe.y < positionYellow.y) {
+          console.log("WIZZZZZZZZ");
+          try {
+            await device.vibrate(0.2);
+          } catch (e) {
+            console.log(e);
+            if (e instanceof Buttplug.ButtplugDeviceError) {
+              console.log("got a device error!");
+            }
           }
         }
+
       });
 
       const btn_off = document.getElementById("vibe-btn-off");
