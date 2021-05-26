@@ -1,2 +1,26 @@
-<h1>Last stories</h1>
-<%= resnder "shared/carousel-story-cards", stories: @stories %>
+<div class="d-flex justify-content-center align-items-center sticky-top bg-white">
+  <h1 class="page-title">Home</h1>
+</div>
+
+<div class="content">
+  <div id="bookmarks" >
+    <h2>Your bookmarks</h2>
+    <%= render "shared/carousel-story-cards", stories: @stories_bookmarked %>
+  </div>
+
+  <div class="content-row">
+    <h2>All stories</h2>
+    <%= render "shared/carousel-story-cards", stories: @all_stories.reverse %>
+  </div>
+</div>
+
+<%= render "shared/navbar" %>
+
+<script type="text/javascript">
+  if (document.querySelector(".slides").childNodes.length > 1) {
+    document.getElementById("bookmarks").className = "content-row";
+  }
+  else {
+    document.getElementById("bookmarks").className = "content-row d-none";
+  }
+</script>

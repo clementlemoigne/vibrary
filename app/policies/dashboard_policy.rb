@@ -1,4 +1,4 @@
-class DashboardPolicy < Struct.new(:user, :dashboard)
+class DashboardPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
