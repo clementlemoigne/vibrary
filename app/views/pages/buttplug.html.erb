@@ -2,176 +2,48 @@
    src="https://cdn.jsdelivr.net/npm/buttplug@1.0.1/dist/web/buttplug.min.js">
 </script>
 <script lang="javascript">
-  Buttplug.buttplugInit().then(() => console.log("Library loaded"));
-  async function runEmbeddedConnectionExample () {
-    // Instantiate our wasm module. This only needs to be done once. If you did it
-    // elsewhere, ignore this.
-    await Buttplug.buttplugInit();
-
-    // After you've created a connector, the connection looks the same no
-    // matter what, though the errors thrown may be different.
-    let connector = new Buttplug.ButtplugEmbeddedConnectorOptions();
-    let client = new Buttplug.ButtplugClient("Developer Guide Example");
-
-    // Now we connect. If anything goes wrong here, we'll throw, but outside of an
-    // issue with arguments, embedded connections should never fail.
-    try {
-      await client.connect(connector);
-    }
-    catch (ex)
-    {
-      console.log("pb pb pb");
-      // If we ever get there, it probably has something to do with our arguments
-      // being wrong.
-      console.log(ex);
-    }
-
-    // We're connected, yay!
-    console.log("Connected!");
-
-    // And now we disconnect as usual
-    await client.disconnect();
-  };
-  //runEmbeddedConnectionExample();
-
-  const runWebsocketConnectionExample = async () => {
-    // Instantiate our wasm module. This only needs to be done once. If you did it
-    // elsewhere, ignore this.
-    await Buttplug.buttplugInit();
-
-    // After you've created a connector, the connection looks the same no
-    // matter what, though the errors thrown may be different.
-    let connector = new Buttplug.ButtplugWebsocketConnectorOptions();
-
-    // This is the default insecure address for Intiface Desktop
-    // (https://intiface.com/desktop). You can connect to it via Chrome, but
-    // Safari/Firefox will require secure certs (covered later).
-    connector.address = "ws://localhost:12345"
-    let client = new Buttplug.ButtplugClient("Websocket Connection Example");
-
-    // Now we connect. If anything goes wrong here, we'll either throw
-    //
-    // - A ButtplugClientConnectionException if there's a problem with
-    //   the Connector, like the network address being wrong, server not
-    //   being up, etc.
-    // - A ButtplugHandshakeException if there is a client/server version
-    //   mismatch.
-    try {
-      await client.connect("Developer Guide Example", connector);
-    }
-    catch (ex)
-    {
-      // If our connection failed, because the server wasn't turned on, SSL/TLS
-      // wasn't turned off, etc, we'll just print and exit here. This will most
-      // likely be a wrapped exception.
-      //
-      // This could also mean our client is newer than our server, and we need to
-      // upgrade the server we're connecting to.
-      console.log(ex);
-    }
-
-    // We're connected, yay!
-    console.log("Connected!");
-
-    // And now we disconnect as usual
-    await client.disconnect();
-  };
-  //runWebsocketConnectionExample();
-
   async function runDeviceEnumerationExample() {
     // Instantiate our wasm module. This only needs to be done once. If you did it
     // elsewhere, ignore this.
     await Buttplug.buttplugInit();
+
     let client = new Buttplug.ButtplugClient("Device Enumeration Example");
-    console.log(client)
 
     // Set up our DeviceAdded/DeviceRemoved event handlers before connecting. If
     // devices are already held to the server when we connect to it, we'll get
     // "deviceadded" events on successful connect.
-    client.addListener("deviceadded", (device) => {
+    client.addListener("deviceadded", async (device) => {
       console.log(`Device Connected: ${device.Name}`);
       console.log("Client currently knows about these devices:");
       client.Devices.forEach((device) => console.log(`- ${device.Name}`));
+     try {
+      await device.vibrate(1.0);
+    } catch (e) {
+      console.log(e);
+      if (e instanceof Buttplug.ButtplugDeviceError) {
+        console.log("got a device error!");
+      }
+    }
+    await new Promise(r => setTimeout(r, 5000));
+    await device.stop();
     });
-
-    client.addListener("deviceremoved", (device) => console.log(`Device Removed: ${device.Name}`));
+    client
+      .addListener("deviceremoved", (device) => console.log(`Device Removed: ${device.Name}`));
 
     // Usual embedded connector setup.
     const connector = new Buttplug.ButtplugEmbeddedConnectorOptions();
-    console.log(connector)
-
-    try {
-        console.log("catch??")
-      await client.connect(connector).catch((e) => {
-        console.log(e);
-        return;
-      });
-    } catch (e) {
-      console.log("connexion error")
-      console.log(e)
-    } finally {}
-
-    console.log(client.Devices);
+    await client.connect(connector);
 
     // Now that everything is set up, we can scan.
     await client.startScanning();
   };
-  runDeviceEnumerationExample();
 
-  async function runErrorExample () {
-
-  async function ThrowError() {
-    // All async functions in Buttplug are written to return exceptions as a
-    // promise rejection, meaning they work as both promise chains and
-    // async/await.
-    throw new ButtplugDeviceError("This is an exception", 0);
-  }
-
-
-  async function ButtplugErrors() {
-    // Instantiate our wasm module. This only needs to be done once. If you did it
-    // elsewhere, ignore this.
-    await Buttplug.buttplugInit();
-
-    const client = new Buttplug.ButtplugClient("Error Example Client");
-    const invalid_options = new Buttplug.ButtplugWebsocketConnectorOptions();
-    //invalid_options.Address = "this is not a websocket address";
-
-    // In javascript, there are 2 ways we can call functions and catch exceptions.
-    // There's promise chain catching.
-    client
-      .connect(invalid_options)
-      .then(() => {
-        console.log("If you got here, shut down Intiface Desktop or whatever other server you're running :P");
-      })
-      .catch(e => {
-        console.log("Using .catch()");
-        console.log(e);
-      });
-    // There's also try/catch, which is handy for async.
-    try {
-      await client.connect(invalid_options);
-    } catch (e) {
-      // However, we don't have the type of the exception we get back, so it could
-      // be a system exception or something else not buttplug related. If you're
-      // interested in Buttplug related exceptions, it's best to check for them
-      // here.
-      console.log(e);
-      if (e instanceof Buttplug.ButtplugError) {
-        console.log("this is a buttplug error");
-        // This will make sure we're doing something specific to Buttplug.
-        if (e instanceof Buttplug.ButtplugClientConnectorError) {
-          console.log("This is a connector error");
-          // And possibly even more specific.
-        }
-      }
-    }
-    // However, as all async javascript functions also return promises, so we can
-    // treat the call as a promise rejection.
-    //ThrowError().catch((e) => console.log("Got an exception back from our promise!"));
-  }
-
-  //ButtplugErrors();
-}
-  //runErrorExample();
+  document.addEventListener("DOMContentLoaded", (event) => {
+    const btn = document.getElementById("scan-btn");
+    btn.addEventListener("click", (event) => {
+      runDeviceEnumerationExample();
+    });
+  });
 </script>
+
+<a href="#" id="scan-btn">Scan</a>
