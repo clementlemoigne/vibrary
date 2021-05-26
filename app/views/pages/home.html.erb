@@ -3,7 +3,7 @@
 </div>
 
 <div class="content">
-  <div class="content-row">
+  <div id="bookmarks" >
     <h2>Your bookmarks</h2>
     <%= render "shared/carousel-story-cards", stories: @stories_bookmarked %>
   </div>
@@ -15,3 +15,13 @@
 </div>
 
 <%= render "shared/navbar" %>
+
+<script type="text/javascript">
+  if (document.querySelector(".slides").childNodes.length > 1) {
+    document.getElementById("bookmarks").className = "content-row";
+  }
+  else {
+    document.getElementById("bookmarks").className = "content-row d-none";
+  }
+</script>
+

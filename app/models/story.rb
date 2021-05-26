@@ -8,6 +8,10 @@ class Story < ApplicationRecord
   validates :title, :content, presence: true
   validate :tags_should_be_in_the_list
 
+  def user_favorite(user)
+    self.favorites.pluck(:user_id).include?(user.id)
+  end
+
   private
 
   def tags_should_be_in_the_list

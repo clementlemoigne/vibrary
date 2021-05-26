@@ -1,8 +1,12 @@
 <div class="container story-card col-9 d-flex">
   <div class="story-card-row">
-    <i class="story-card-icone far fa-bookmark"></i>
-    <h1><%= story.title.capitalize %></h1>
+    <% if story.user_favorite(current_user) %>
+      <i class="story-card-icone fas fa-bookmark"></i>
+    <% else %>
+      <i class="story-card-icone far fa-bookmark"></i>
+    <% end %>
 
+    <h1><%= story.title.capitalize %></h1>
     <h4>By <%= story.author.username.capitalize %></h4>
     <div class="story-card-text">
       <p class="story-card-p"><%= story.content %></p>
