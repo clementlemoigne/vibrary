@@ -2,6 +2,7 @@ require "faker"
 
 Reaction.destroy_all
 Favorite.destroy_all
+Reading.destroy_all
 FavoriteAuthor.destroy_all
 Story.destroy_all
 User.destroy_all
