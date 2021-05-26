@@ -22,6 +22,9 @@ body {
 
 .container-global {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+
 }
 
 .page-title {
@@ -31,8 +34,13 @@ body {
   font-weight: lighter;
   font-size: xx-large;
   border-bottom: 0.5mm solid $rose;
+  margin: 0;
 }
 
 .content {
   margin-top: 2vh;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 72px;
 }

@@ -3,13 +3,18 @@
 </div>
 
 <div class="content">
-  <div id="bookmarks" >
-    <h2>Your bookmarks</h2>
+  <div id="readings" class="content-row">
+    <h2 class="title-carousel">Continue reading</h2>
+    <%= render "shared/carousel-story-cards", stories: @stories_current_reading %>
+  </div>
+
+  <div id="bookmarks" class="content-row">
+    <h2 class="title-carousel">Your bookmarks</h2>
     <%= render "shared/carousel-story-cards", stories: @stories_bookmarked %>
   </div>
 
   <div class="content-row">
-    <h2>All stories</h2>
+    <h2 class="title-carousel">All stories</h2>
     <%= render "shared/carousel-story-cards", stories: @all_stories.reverse %>
   </div>
 </div>
@@ -17,11 +22,19 @@
 <%= render "shared/navbar" %>
 
 <script type="text/javascript">
-  if (document.querySelector(".slides").childNodes.length > 1) {
-    document.getElementById("bookmarks").className = "content-row";
-  }
-  else {
-    document.getElementById("bookmarks").className = "content-row d-none";
-  }
+  document.querySelectorAll(".slides").forEach ((element) => {
+    if (element.childNodes.length > 1) {
+      element.parentElement.parentElement.className = "content-row";
+    } else {
+      element.parentElement.parentElement.className = "content-row d-none";
+    }
+  });
+</script>
+
+<script type="text/javascript">
+  document.querySelectorAll(".navbar-icon").forEach ((element) => {
+    element.style.opacity = 0.3;
+  });
+  document.getElementById("home-icone").style.opacity = 1;
 </script>
 
