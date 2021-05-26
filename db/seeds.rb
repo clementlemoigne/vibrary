@@ -51,6 +51,7 @@ story_granny_3 = Story.create!(
 )
 
 # Bree has 3 bookmarked stories, 1 & 2 from Brigitte and 3 from Nath. 
+# Bree started reading 3 stories, Brigitte 3 and Nath 1 & 2.
 # Nath 2 & 3 and Brigitte 2 are the best rated stories, 
 # with 4 upvotes 1 downvote on nath 3, 3 upvotes on nath 2, 2 upvotes on brigitte 2.
 story_brigitte_1 = Story.create!(
@@ -106,11 +107,11 @@ story_nath_3 = Story.create!(
   content: "When he comes away I catch his gaze. His eyes look unfocussed – cross-eyed with lust. “I’ve missed you, I’ve missed you so much.” His expression a strange blend of pain and elation, whispered words born of desperate need. He swiftly stretches to cover my body with his, kissing me wildly.  He raids my mouth mercilessly, our arms and legs tangling and writhing, taking in the exquisite pleasure of intimate contact.
 
   He rolls taking me with him and we pause for air, our breaths mingling and faces flushed. With my body on top of his I stroke my hand over the sprinkling of stubble, reacquainting myself with every curve and dip of his face. “You are so precious, thank you for taking another chance on me.”
-
+  
   Another low hum is his reply and he closes his eyes as my gratitude sluices over him – clearly striking a cord. “Come here.” It’s a carnal command but I don’t understand and I raise an unsure brow. Where does he want me to go, I’m already here?
-
+  
   “Come, sit here, on my chest.” He pats his sternum. His silky voice is dripping with erotic promise.
-
+  
   I scoot up, eager to find out what passionate delight he has in store for me. It only takes a second for me to grasp the nature of the deeply intimate act he has in mind and I gnaw at my lip, my coyness getting the better of me.
   
   My legs are bent with my knees resting on either side of his head. My bottom sits on his chest, taking my weight which leaves my secret opening utterly gaping and vulnerable, not to mention very close to his sinful mouth. I can feel his breath on me, fluttering and making my heart stutter."
@@ -122,53 +123,81 @@ fav_author_1 = FavoriteAuthor.create!(
   author: granny
 )
 
+# Marks Brigitte 1 & 2 and Nath 3 as bookmarked (read later)
+farovite_1 = Favorite.create!(
+  user: bree,
+  story: story_brigitte_1
+)
+farovite_2 = Favorite.create!(
+  user: bree,
+  story: story_brigitte_2
+)
+farovite_3 = Favorite.create!(
+  user: bree,
+  story: story_nath_3
+)
+
+# Marks Nath 1 & 2 and Brigitte 3 as ongoing (started reading)
+reading_1 = Reading.create!(
+  user: bree,
+  story: story_nath_1
+)
+reading_2 = Reading.create!(
+  user: bree,
+  story: story_nath_2
+)
+reading_3 = Reading.create!(
+  user: bree,
+  story: story_brigitte_3
+)
+
 # Reactions from the random users
-reaction_1 = Reaction.create(
+reaction_1 = Reaction.create!(
   user: user1,
   story: story_nath_3,
   upvoted: true
 )
-reaction_2 = Reaction.create(
+reaction_2 = Reaction.create!(
   user: user2,
   story: story_nath_3,
   upvoted: true
 )
-reaction_3 = Reaction.create(
+reaction_3 = Reaction.create!(
   user: user3,
   story: story_nath_3,
   upvoted: true
 )
-reaction_4 = Reaction.create(
+reaction_4 = Reaction.create!(
   user: user4,
   story: story_nath_3,
   upvoted: true
 )
-reaction_5 = Reaction.create(
+reaction_5 = Reaction.create!(
   user: user5,
   story: story_nath_3,
   upvoted: false
 )
-reaction_6 = Reaction.create(
+reaction_6 = Reaction.create!(
   user: user1,
   story: story_nath_2,
   upvoted: true
 )
-reaction_7 = Reaction.create(
+reaction_7 = Reaction.create!(
   user: user2,
   story: story_nath_2,
   upvoted: true
 )
-reaction_8 = Reaction.create(
+reaction_8 = Reaction.create!(
   user: user3,
   story: story_nath_2,
   upvoted: true
 )
-reaction_9 = Reaction.create(
+reaction_9 = Reaction.create!(
   user: user5,
   story: story_brigitte_2,
   upvoted: true
 )
-reaction_10 = Reaction.create(
+reaction_10 = Reaction.create!(
   user: user4,
   story: story_brigitte_2,
   upvoted: true
