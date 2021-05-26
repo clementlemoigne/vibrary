@@ -1,6 +1,10 @@
+<a href="#" id="scan-btn">Scan</a>
+<a href="#" id="vibe-btn">Vibe</a>
+
 <script lang="javascript"
    src="https://cdn.jsdelivr.net/npm/buttplug@1.0.1/dist/web/buttplug.min.js">
 </script>
+
 <script lang="javascript">
   async function runDeviceEnumerationExample() {
     // Instantiate our wasm module. This only needs to be done once. If you did it
@@ -16,17 +20,38 @@
       console.log(`Device Connected: ${device.Name}`);
       console.log("Client currently knows about these devices:");
       client.Devices.forEach((device) => console.log(`- ${device.Name}`));
-     try {
-      await device.vibrate(1.0);
-    } catch (e) {
-      console.log(e);
-      if (e instanceof Buttplug.ButtplugDeviceError) {
-        console.log("got a device error!");
+      try {
+        await device.vibrate(1.0);
+      } catch (e) {
+        console.log(e);
+        if (e instanceof Buttplug.ButtplugDeviceError) {
+          console.log("got a device error!");
+        }
       }
-    }
-    await new Promise(r => setTimeout(r, 5000));
-    await device.stop();
+      await new Promise(r => setTimeout(r, 1000));
+      await device.stop();
+
+
+      const patate = document.getElementById("vibe-btn");
+      await patate.addEventListener("click", async (event) => {
+        event.preventDefault();
+        console.log("coucou");
+
+        try {
+          await device.vibrate(1.0);
+        } catch (e) {
+          console.log(e);
+          if (e instanceof Buttplug.ButtplugDeviceError) {
+            console.log("got a device error!");
+          }
+        }
+        await new Promise(r => setTimeout(r, 1000));
+        await device.stop();
+
+      });
+
     });
+
     client
       .addListener("deviceremoved", (device) => console.log(`Device Removed: ${device.Name}`));
 
@@ -38,12 +63,12 @@
     await client.startScanning();
   };
 
-  document.addEventListener("DOMContentLoaded", (event) => {
+  document.addEventListener("DOMContentLoaded", () => {
     const btn = document.getElementById("scan-btn");
     btn.addEventListener("click", (event) => {
       runDeviceEnumerationExample();
     });
-  });
-</script>
 
-<a href="#" id="scan-btn">Scan</a>
+  });
+
+</script>
