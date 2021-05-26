@@ -114,7 +114,7 @@ story_nath_3 = Story.create!(
   
   I scoot up, eager to find out what passionate delight he has in store for me. It only takes a second for me to grasp the nature of the deeply intimate act he has in mind and I gnaw at my lip, my coyness getting the better of me.
   
-  My legs are bent with my knees resting on either side of his head. My bottom sits on his chest, taking my weight which leaves my secret opening utterly gaping and vulnerable, not to mention very close to his sinful mouth. I can feel his breath on me, fluttering and making my heart stutter.",
+  My legs are bent with my knees resting on either side of his head. My bottom sits on his chest, taking my weight which leaves my secret opening utterly gaping and vulnerable, not to mention very close to his sinful mouth. I can feel his breath on me, fluttering and making my heart stutter."
 )
 
 # Marks Granny as one of Bree's favorite authors
