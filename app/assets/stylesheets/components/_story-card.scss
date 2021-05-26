@@ -1,5 +1,5 @@
 .story-card {
-  height: 40vh;
+  height: 48vh;
   border: 0.5mm solid $rose;
   padding: 0;
   border-radius: 8px;
@@ -29,7 +29,11 @@
     font-family: 'Poppins';
     font-weight: lighter;
     font-size: xx-large;
-    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 5px 0;
+    width: 70%;
   }
   h4 {
     font-family: 'Poppins';
