@@ -9,5 +9,13 @@
 @import "font-awesome";
 
 // Your CSS partials
+@import "components/carousel-story-cards";
 @import "components/index";
+@import "components/navbar";
+@import "components/story-card";
 @import "pages/index";
+
+body {
+  background-color: white;
+}
+

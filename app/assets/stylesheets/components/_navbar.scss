@@ -1,12 +1,19 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+$rose: #edc1dc;
+
+.navbar-container {
+  position: fixed;
+  bottom: 0px;
+  height: 80px;
+  background-color: white;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
+.navbar {
+  border-top: 0.5mm solid $rose;
+  padding: 0px;
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+  .fas {
+    font-size: xx-large;
+    color: $rose;
+    margin: 0 auto;
+  }
 }
