@@ -1,0 +1,49 @@
+<script lang="javascript"
+   src="https://cdn.jsdelivr.net/npm/buttplug@1.0.1/dist/web/buttplug.min.js">
+</script>
+<script lang="javascript">
+  async function runDeviceEnumerationExample() {
+    // Instantiate our wasm module. This only needs to be done once. If you did it
+    // elsewhere, ignore this.
+    await Buttplug.buttplugInit();
+
+    let client = new Buttplug.ButtplugClient("Device Enumeration Example");
+
+    // Set up our DeviceAdded/DeviceRemoved event handlers before connecting. If
+    // devices are already held to the server when we connect to it, we'll get
+    // "deviceadded" events on successful connect.
+    client.addListener("deviceadded", async (device) => {
+      console.log(`Device Connected: ${device.Name}`);
+      console.log("Client currently knows about these devices:");
+      client.Devices.forEach((device) => console.log(`- ${device.Name}`));
+     try {
+      await device.vibrate(1.0);
+    } catch (e) {
+      console.log(e);
+      if (e instanceof Buttplug.ButtplugDeviceError) {
+        console.log("got a device error!");
+      }
+    }
+    await new Promise(r => setTimeout(r, 5000));
+    await device.stop();
+    });
+    client
+      .addListener("deviceremoved", (device) => console.log(`Device Removed: ${device.Name}`));
+
+    // Usual embedded connector setup.
+    const connector = new Buttplug.ButtplugEmbeddedConnectorOptions();
+    await client.connect(connector);
+
+    // Now that everything is set up, we can scan.
+    await client.startScanning();
+  };
+
+  document.addEventListener("DOMContentLoaded", (event) => {
+    const btn = document.getElementById("scan-btn");
+    btn.addEventListener("click", (event) => {
+      runDeviceEnumerationExample();
+    });
+  });
+</script>
+
+<a href="#" id="scan-btn">Scan</a>
