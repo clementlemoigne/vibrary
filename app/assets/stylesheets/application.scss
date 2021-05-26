@@ -9,5 +9,29 @@
 @import "font-awesome";
 
 // Your CSS partials
+@import "components/carousel-story-cards";
 @import "components/index";
+@import "components/navbar";
+@import "components/story-card";
 @import "pages/index";
+
+body {
+  background-color: white;
+}
+
+.container-global {
+  height: 100vh;
+}
+
+.page-title {
+  height: 12vh;
+  padding-top: 4vh;
+  font-family: 'Poppins';
+  font-weight: lighter;
+  font-size: xx-large;
+  border-bottom: 0.5mm solid $rose;
+}
+
+.content {
+  margin-top: 2vh;
+}

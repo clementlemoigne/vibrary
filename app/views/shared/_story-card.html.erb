@@ -1,0 +1,37 @@
+<div class="container story-card col-9 d-flex">
+  <div class="story-card-row">
+    <i class="story-card-icone far fa-bookmark"></i>
+    <h1><%= story.title.capitalize %></h1>
+
+    <h4>By <%= story.author.username.capitalize %></h4>
+    <div class="story-card-text">
+      <p class="story-card-p"><%= story.content %></p>
+    </div>
+  </div>
+
+  <div class="story-card-row">
+    <div class="story-card-infos">
+      <div class="d-flex justify-content-between">
+        <div class="intensity">
+          <% if story.intensity %>
+            <% (story.intensity).times do %>
+              <i class="intensity-icone fas fa-heart"></i>
+            <% end %>
+            <% (5-story.intensity).times do %>
+              <i class="intensity-icone far fa-heart"></i>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="time d-flex">
+          <i class="p-1 far fa-clock"></i>
+          <p><%= story.reading_time %>min</p>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between">
+        <% story.tags.each do |tag| %>
+          <div class="tag"><%= tag %></div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
