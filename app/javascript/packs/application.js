@@ -26,9 +26,9 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
-import { initButtplug } from '../plugins/init_buttplug';
+import { initButtplug } from '../components/connect-buttplug';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
-  // initButtplug();
+  initButtplug();
 });
