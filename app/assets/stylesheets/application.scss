@@ -45,3 +45,14 @@ body {
   flex-direction: column;
   padding-bottom: 72px;
 }
+
+.vibrating-zone {
+  background-color: $rose;
+  opacity: 30%;
+  height: 160px;
+  width: 100%;
+  position: fixed;
+  top: 45vh;
+  right: 0px;
+  z-index: -1;
+}
