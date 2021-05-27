@@ -1,5 +1,5 @@
 <div class="container story-card col-9 d-flex">
-  <div class="story-card-row">
+  <div class="story-card-row story-card-row-up">
     <% if story.user_favorite(current_user) %>
       <i class="story-card-icone fas fa-bookmark"></i>
     <% else %>
@@ -13,9 +13,9 @@
     </div>
   </div>
 
-  <div class="story-card-row">
+  <div class="story-card-row story-card-row-down">
     <div class="story-card-infos">
-      <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-between pt-3">
         <div class="intensity">
           <% if story.intensity %>
             <% (story.intensity).times do %>

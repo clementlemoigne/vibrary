@@ -1,20 +1,48 @@
-<h2>Log in</h2>
+<div class="container">
+  <div class="vh-100 d-flex flex-column justify-content-center align-items-center">
+  <%= image_tag "landing_logo.png", class: "logo-sign-up" %>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "w-100 px-3" } ) do |f| %>
+    <div class="form-inputs">
+      <div class="p-3 text-white box-blue-sign-up">
+        <div class="text-white"><p>Email Address:</p></div>
+        <div class="d-flex">
+          <div><i class="fas fa-envelope"></i></div>
+          <div><%= f.input :email,
+                      label: false,
+                      required: false,
+                      autofocus: true,
+                      placeholder: "mail@email.com",
+                      input_html: { autocomplete: "email" } %>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-3 text-white box-blue-sign-up">
+        <div class="text-white"><p>Password:</p></div>
+        <div class="d-flex">
+          <div><i class="fas fa-unlock"></i></div>
+          <div><%= f.input :password,
+                      label: false,
+                      required: false,
+                      autofocus: true,
+                      placeholder: "password",
+                      input_html: { autocomplete: "current-password" } %>
+          </div>
+        </div>
+      </div>
+
+        <%= f.input :remember_me, as: :boolean, wrapper_html: {class: "d-flex justify-content-end"} if devise_mapping.rememberable? %>
+    </div>
+
+    <div class="d-flex justify-content-between">
+      <div class="skip-btn"><%= link_to 'Skip', '#' %></div>
+      <div class="form-actions">
+        <%= f.button :submit, "Log in" %>
+      </div>
+    </div>
+  <% end %>
+
+  <%# <%= render "devise/shared/links" %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

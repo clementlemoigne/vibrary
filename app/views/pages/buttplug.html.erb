@@ -1,6 +1,39 @@
+<a href="#" id="scan-btn" class="btn btn-primary">Scan</a>
+<a href="#" id="vibe-btn-on" class="btn btn-success">Vibe ON</a>
+<a href="#" id="vibe-btn-off" class="btn btn-warning">Vibe OFF</a>
+<a href="#" id="btn" class="btn btn-dark">TEST</a>
+<div class="div-parent">
+  <div class="div-yellow bg-info"></div>
+  <div class="div-text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet libero sed sapien tempus consequat. Sed at nisi pharetra, consequat arcu quis, malesuada nisi. In ut orci ut nulla bibendum viverra. Aliquam at suscipit neque, viverra suscipit est. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque at porta urna. Praesent vitae lobortis enim. Nulla facilisi. Curabitur vel enim eleifend, imperdiet ligula vel, efficitur sem. Vestibulum purus lorem, venenatis ac ligula quis, egestas congue risus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam condimentum elit eget ipsum ornare, non bibendum orci elementum. Mauris eget nulla rutrum, finibus ipsum nec, pretium tellus. Phasellus ullamcorper augue tortor, ac aliquam urna elementum eget. Quisque consequat tellus sagittis libero volutpat, eu tempus ipsum consectetur. Donec aliquam posuere ultrices.</p>
+
+  <p class="vibe text-primary">Praesent porttitor, sapien sit amet cursus mollis, erat odio aliquet lacus, sit amet pharetra sem sapien vitae eros. Vestibulum molestie vitae tortor eu aliquam. Sed est turpis, sagittis eu aliquet in, lacinia nec mauris. Morbi diam ipsum, maximus vel est eget, hendrerit venenatis mi. Aliquam id congue mi, et scelerisque ante. Sed felis est, faucibus blandit hendrerit ac, pellentesque at libero. Donec viverra vulputate lorem a eleifend. Integer ac metus blandit, scelerisque tortor ut, iaculis dui. Cras vehicula sem in enim varius, eu egestas augue dapibus. Donec tempor risus at lacinia aliquam.</p>
+
+  <p>Ut sit amet euismod lectus. Sed ultricies ultricies augue, vel venenatis turpis ullamcorper a. Aliquam et consequat odio. Donec at sapien fringilla, vehicula lacus non, pharetra mi. Mauris eros magna, ultricies vel est ultrices, dictum ultrices justo. In eu lectus mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus dignissim commodo nisl et interdum. Nunc posuere velit in porta consectetur.</p>
+
+  <p>Vestibulum sed sem non turpis tincidunt mattis vehicula sit amet felis. Fusce fringilla imperdiet ex et condimentum. Fusce porta erat metus, at pretium ligula scelerisque et. Proin accumsan maximus dignissim. Praesent consectetur sem ac leo scelerisque, a vehicula nulla tempor. Nulla porttitor arcu volutpat eros rutrum, eu feugiat arcu placerat. Nunc in massa ornare, imperdiet eros et, suscipit magna. Nulla bibendum lorem massa, et eleifend elit luctus at. Aenean convallis hendrerit nisi, non dapibus augue venenatis et. Donec eu volutpat nibh. Nullam pretium aliquam erat at consequat. Phasellus et quam hendrerit, ullamcorper augue vitae, fermentum dui.</p>
+
+  <p>Donec tincidunt fermentum turpis in blandit. Suspendisse iaculis tincidunt condimentum. Proin ac ante a nisl commodo placerat. Donec facilisis ipsum vitae ipsum aliquam, vitae euismod est porttitor. Praesent consequat mi sit amet neque euismod fermentum. Vivamus sed tellus porttitor, molestie dolor vitae, efficitur libero. Integer imperdiet laoreet mi eget hendrerit. Nulla porttitor et lacus nec volutpat. Mauris ultricies tellus erat, vel ultrices ligula tincidunt tempus. Pellentesque posuere dolor non sapien accumsan, vitae feugiat magna ultricies. Praesent at interdum nunc, non pharetra magna. Phasellus neque erat, lobortis non facilisis vel, finibus blandit ligula. Maecenas eu varius nulla. Donec quis enim vitae odio imperdiet finibus. Aliquam et auctor diam. Donec rutrum dui nec purus iaculis ornare.</p></div>
+</div>
+
+
+<script lang="javascript">
+  window.addEventListener('scroll', function(e) {
+    positionVibe = document.querySelector(".vibe").getBoundingClientRect();
+    positionYellow = document.querySelector(".div-yellow").getBoundingClientRect();
+    <%# console.log(`VibeBox : ${positionVibe.y}`);
+    console.log(`YellowBox : ${positionYellow.y}`); %>
+    if (positionVibe.y < positionYellow.y) {
+      console.log("WIZZZZZZZZ");
+    }
+  });
+</script>
+
+
+
 <script lang="javascript"
    src="https://cdn.jsdelivr.net/npm/buttplug@1.0.1/dist/web/buttplug.min.js">
 </script>
+
 <script lang="javascript">
   async function runDeviceEnumerationExample() {
     // Instantiate our wasm module. This only needs to be done once. If you did it
@@ -16,17 +49,46 @@
       console.log(`Device Connected: ${device.Name}`);
       console.log("Client currently knows about these devices:");
       client.Devices.forEach((device) => console.log(`- ${device.Name}`));
-     try {
-      await device.vibrate(1.0);
-    } catch (e) {
-      console.log(e);
-      if (e instanceof Buttplug.ButtplugDeviceError) {
-        console.log("got a device error!");
+      try {
+        await device.vibrate(1.0);
+      } catch (e) {
+        console.log(e);
+        if (e instanceof Buttplug.ButtplugDeviceError) {
+          console.log("got a device error!");
+        }
       }
-    }
-    await new Promise(r => setTimeout(r, 5000));
-    await device.stop();
+      await new Promise(r => setTimeout(r, 1000));
+      await device.stop();
+
+
+      const btn_on = document.getElementById("vibe-btn-on");
+      await window.addEventListener('scroll', async (event) => {
+        //event.preventDefault();
+        //console.log("coucou");
+        positionVibe = document.querySelector(".vibe").getBoundingClientRect();
+        positionYellow = document.querySelector(".div-yellow").getBoundingClientRect();
+        if (positionVibe.y < positionYellow.y) {
+          console.log("WIZZZZZZZZ");
+          try {
+            await device.vibrate(0.2);
+          } catch (e) {
+            console.log(e);
+            if (e instanceof Buttplug.ButtplugDeviceError) {
+              console.log("got a device error!");
+            }
+          }
+        }
+
+      });
+
+      const btn_off = document.getElementById("vibe-btn-off");
+      await btn_off.addEventListener("click", async (event) => {
+        event.preventDefault();
+        console.log("stop");
+        await device.stop();
+      });
     });
+
     client
       .addListener("deviceremoved", (device) => console.log(`Device Removed: ${device.Name}`));
 
@@ -38,12 +100,12 @@
     await client.startScanning();
   };
 
-  document.addEventListener("DOMContentLoaded", (event) => {
+  document.addEventListener("DOMContentLoaded", () => {
     const btn = document.getElementById("scan-btn");
     btn.addEventListener("click", (event) => {
       runDeviceEnumerationExample();
     });
-  });
-</script>
 
-<a href="#" id="scan-btn">Scan</a>
+  });
+
+</script>

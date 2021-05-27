@@ -3,13 +3,12 @@
   border: 0.5mm solid $rose;
   padding: 0;
   border-radius: 8px;
-  box-shadow: 1px 1px 4px rgba(218, 221, 223, 0.4);
+  box-shadow: 2px 2px 8px rgba(218, 221, 223, 0.4);
   flex-direction: column;
   margin: 0 10px;
 }
 
 .story-card-row {
-  height: 68%;
   width: 100%;
   padding: 16px;
   position: relative;
@@ -22,7 +21,7 @@
   }
 
   .story-card-text {
-    height: 62%;
+    height: 70%;
   }
 
   h1 {
@@ -50,9 +49,17 @@
   }
 }
 
+.story-card-row-up {
+  height: 60%;
+}
+
+.story-card-row-down {
+  height: 40%;
+}
+
 .story-card-infos {
-  height: 100%;
-  padding: 0 22px;
+  height: 80%;
+  padding: 22px;
   display: flex;
   flex-direction: column;
   justify-content: space-around

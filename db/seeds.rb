@@ -98,24 +98,55 @@ story_nath_2 = Story.create!(
 )
 
 # The third story from Nath is slightly longer so we have an example for what a "full"
-# story would look like on the app when opened. It's a random extract from 50 shades of grey.
+# story would look like on the app when opened. It's a random extract from 50 shades of grey (chapter 24 i think).
 story_nath_3 = Story.create!(
   author: nathalie,
   tags: ["BDSM", "Romance"],
-  vibration_compatibility: false,
+  vibration_compatibility: true,
+  intensity: 4,
   reading_time: 90,
   title: "Something Gray",
-  content: "When he comes away I catch his gaze. His eyes look unfocussed – cross-eyed with lust. “I’ve missed you, I’ve missed you so much.” His expression a strange blend of pain and elation, whispered words born of desperate need. He swiftly stretches to cover my body with his, kissing me wildly.  He raids my mouth mercilessly, our arms and legs tangling and writhing, taking in the exquisite pleasure of intimate contact.
+  content: "“Do you like the mirror Mrs Grey?” the hoarse whisper next to my ear suggests that he too, is a fan. One arm is locked around my waist, securing me to him and the other is trailing slow, fingertip-circles over my belly, not going anywhere near where I want them to go.
 
-  He rolls taking me with him and we pause for air, our breaths mingling and faces flushed. With my body on top of his I stroke my hand over the sprinkling of stubble, reacquainting myself with every curve and dip of his face. “You are so precious, thank you for taking another chance on me.”
+  My head rolls back onto his shoulder, my eyes almost flickering closed, lids heavy with desire, “mmhh,” I mewl my affirmation.
   
-  Another low hum is his reply and he closes his eyes as my gratitude sluices over him – clearly striking a cord. “Come here.” It’s a carnal command but I don’t understand and I raise an unsure brow. Where does he want me to go, I’m already here?
+  He chuckles quietly, “look at us baby,” the sharp spike of pain that connects my nipple to my sex makes my eyes fly open as Christian pinches the straining bud. I gasp and shudder embarrassingly against him.
   
-  “Come, sit here, on my chest.” He pats his sternum. His silky voice is dripping with erotic promise.
+  “So eager Mrs Grey, so responsive,” he teases, “shall I make you come like this?” he’s rolling my peak between his thumb and forefinger, a leisurely squeeze and roll through the lace of the bra – just enough to drive me wild but not enough to get me off.
   
-  I scoot up, eager to find out what passionate delight he has in store for me. It only takes a second for me to grasp the nature of the deeply intimate act he has in mind and I gnaw at my lip, my coyness getting the better of me.
+  “Please,” I manage past my panting breaths. Any which way, I don’t care as long as you do!
   
-  My legs are bent with my knees resting on either side of his head. My bottom sits on his chest, taking my weight which leaves my secret opening utterly gaping and vulnerable, not to mention very close to his sinful mouth. I can feel his breath on me, fluttering and making my heart stutter."
+  Watching him – us is unspeakably erotic; my desire pooling, building, heaving I decide to help things along. He senses the shift in my arms that I want to slip from their hold so I can touch him but his growling order stops me, “keep still baby, if you move I stop.”
+  
+  I whimper and re-join my hands behind his neck, thrusting my breasts forward.
+  
+  “I want you too baby, I just want to play a bit, enjoy this moment with my wife.” Instead of soothing me the way he draws out the word wife sends lashings of fire through my veins, my stomach muscles already starting to quiver in anticipation of my brewing release.
+  
+  Fuck!
+  
+  “Look at your breasts Anastasia,” he cups one breast from the bottom, holding it for our mutual appreciation.  The balcony bra retains my breasts in a perfect display, the very low cut of the demi cups only just covering my puckering areola. His voice is turning huskier, his look darker as he brushes his thumb over the dark raring point.
+  
+  This time we gasp together, sucking in a fervent breath before Christian spins me around, crushing his mouth to mine. The harsh assault steals all reason, only awareness of blazing sensation remains; it feels like his hands are everywhere at once.
+  
+  I push off his shirt and roughly undo his belt, my fingers suddenly deft in their eagerness. I slide my hands down the sides of his torso, beneath the elastic of his boxers to get rid of both undies and pants in one go. He steps out of his slacks and I grip him firmly, working my fist down the length of him. When he inhales against my vigorous attack I trace the seal of his mouth with my tongue.
+  
+  Bodies joined, hungry sounds escaping, he starts walking us back, up against the edge of the bed. I break away; placing both palms on his chest I push so he topples backwards onto the covers. He laughs at my audacity, the throaty rumble is a shockingly sexy sound so I follow, crawling up to straddle him.
+  
+  In a surprise move he sits up, holding my hips in place, “so brazen Mrs Grey but I hope you know you’re not in charge right now.” Even though his eyes are smiling they’re also scorching with his unguarded want, clearly he has a plan for our first wedded union. I pout and bat my lashes but truthfully, I’m eager to be driven to passion by his expert steering. “Turn around baby.”
+  
+  I swivel and sit on his lap; my legs tucked back, knees planted on either side of his thighs, facing the mirror once more. His plan is suddenly crystal clear, I’m completely open to him, legs spread wide. Like this, both of his hands are free to touch and caress wherever he wants. His erection, currently hot and rigid between the cheeks of my behind, ready to push through my wet folds and we can watch it all, together.
+  
+  I’m grateful that he seems to have reached the edge of his control as he lifts my hips and brings me down, his hips shoving up to fill me with all of his hard length – finally letting me feel the delicious stretch my sex has been aching for.
+  
+  He grunts, his teeth bared as if in pain as he fights to hold off his release, keeping me still. I groan in pleasure, one hand finding a grip on his thigh while the other rakes through his hair.
+  
+  His hand snakes down, finding the sensitive heart in my slick mound his fingers start to circle there, the pressure perfect. “Fuck Ana, you’re so tight, so wet. Move baby, push up with your knees.” He growls though his gritted teeth as his other hand finds my breast. Pulling the bra cup down he tweaks my nipple, echoing the phenomenal pleasure down below.
+  
+  I don’t need to be asked twice, flexing my quads I drive up, to his very tip before forcing myself down, finding that sensational grind and friction that starts the inevitable spiral resulting from this much stunning stimulation.
+  
+  Watching him touching me, filling me has us unravelling rapidly, “come baby, come now!” he demands, his clever fingers increasing their fantastic rhythm, matching the increasing speed of my strokes up and down his ever hardening shaft perfectly.
+  
+  I fall hard, spectacularly as the coiled tension releases like a cracked whip in a blinding shudder that’s intensified by Christian’s vicious pulsing inside me, the aftershocks of our shared orgasm prolonging my gratification. Christian pants into my neck, dropping tender, out-of-breath kisses behind my ear as we float back to our senses."
 )
 
 # Marks Granny as one of Bree's favorite authors
