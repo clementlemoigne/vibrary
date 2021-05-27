@@ -7,10 +7,6 @@
   .p-6rem {
   padding-top: 6rem;
   }
-
-  .form-group > label {
-    color: $black;
-  }
 }
 
 .logo-sign-up {
@@ -24,6 +20,8 @@
   margin-top: 1.75rem;
   text-align: center;
   color: grey;
+  display: flex;
+  flex-direction: column;
 }
 
 .sign_up {

@@ -12,7 +12,13 @@ $light-gray: #F4F4F4;
 
 
 $shadow: 0px 10px 20px 0px #655F7333;
+$light-blue: #d4d7ec;
 $blue: #9AA5F4;
 $purple: #8F6EC3;
 $light-purple: #F6EFFB;
 $black: #404040;
+
+
+.box-lightblue {
+  background: $light-blue;
+}

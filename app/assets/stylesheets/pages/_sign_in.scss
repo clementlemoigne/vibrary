@@ -37,14 +37,14 @@
   }
 
   input {
-    background-color: $blue !important;
+    // background-color: $blue !important;
     color: white;
     border-radius: 200px;
     padding: 0.375rem 1.75rem;
   }
 
   .form-control{
-    background-color: $blue !important;
+    // background-color: $blue !important;
     :focus {
       color: white;
     }

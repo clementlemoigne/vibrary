@@ -4,41 +4,39 @@
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "w-100 px-3" } ) do |f| %>
     <div class="form-inputs">
-      <div class="p-3 text-white box-blue-sign-up">
-        <div class="text-white"><p>Email Address:</p></div>
-        <div class="d-flex">
-          <div><i class="fas fa-envelope"></i></div>
-          <div><%= f.input :email,
+      <div class="mb-3">
+        <div class="text-black"><p>Email Address:</p></div>
+        <div class="d-flex box-lightblue pl-3 block-input">
+          <div><i class="fas fa-envelope text-white"></i></div>
+          <div class="flex-grow-1"><%= f.input :email,
                       label: false,
                       required: false,
-                      autofocus: true,
                       placeholder: "mail@email.com",
                       input_html: { autocomplete: "email" } %>
           </div>
         </div>
       </div>
 
-      <div class="p-3 text-white box-blue-sign-up">
-        <div class="text-white"><p>Password:</p></div>
-        <div class="d-flex">
-          <div><i class="fas fa-unlock"></i></div>
-          <div><%= f.input :password,
+      <div class="mb-3">
+        <div class="text-black"><p>Password:</p></div>
+        <div class="d-flex box-lightblue pl-3 block-input">
+          <div><i class="fas fa-unlock text-white"></i></div>
+          <div class="flex-grow-1"><%= f.input :password,
                       label: false,
                       required: false,
-                      autofocus: true,
                       placeholder: "password",
                       input_html: { autocomplete: "current-password" } %>
           </div>
         </div>
       </div>
 
-        <%= f.input :remember_me, as: :boolean, wrapper_html: {class: "d-flex justify-content-end color-black-vibrary"} if devise_mapping.rememberable? %>
+        <%= f.input :remember_me, as: :boolean, wrapper_html: {class: "d-flex justify-content-end color-black-vibrary mb-3"} if devise_mapping.rememberable? %>
     </div>
 
     <div class="d-flex justify-content-between">
       <div class="skip-btn"><%= link_to 'Skip', '#' %></div>
       <div class="form-actions">
-        <%= f.button :submit, "Log in" %>
+        <%= f.button :submit, "Log in", class: "btn-vibrary" %>
       </div>
     </div>
   <% end %>
