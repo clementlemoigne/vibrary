@@ -4,9 +4,9 @@
 
 <div class="container">
   <h2>Access to <span class="caveat">My Vibrary</span></h2>
-  <ul>
-    <li class="paragraph">You must be logged in.</li>
-    <li class="paragraph">You must be 18+ years old.</li>
+  <ul class="list-unstyled">
+    <li class="paragraph"> 👩‍💻 You must be logged in.</li>
+    <li class="paragraph"> 🔞 You must be 18+ years old.</li>
   </ul>
 </div>
 
@@ -17,8 +17,11 @@
   </div>
 
   <div class="paragraph">
-    <h2>Connect stories</h2>
-    <%= image_tag "vibrator.png", class: "vibrator_img" %>
+    <h2>Connect stories <%= image_tag "vibrator.png", class: "vibrator_img" %></h2>
+  </div>
+
+  <div class="d-flex align-items-center justify-content-center mt-5">
+    <%= link_to "Log in", new_user_session_path, class: "btn-vibrary btn-shadowed" %>
   </div>
 
 </div>
