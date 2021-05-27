@@ -8,6 +8,16 @@ class Story < ApplicationRecord
   validates :title, :content, presence: true
   validate :tags_should_be_in_the_list
 
+  include PgSearch::Model
+  pg_search_scope :global_search,
+    against: [ :title, :tags ],
+    associated_against: {
+      author: [ :username ]
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
+
   def user_favorite(user)
     self.favorites.pluck(:user_id).include?(user.id)
   end
