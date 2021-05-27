@@ -6,7 +6,8 @@
       <i class="story-card-icone far fa-bookmark"></i>
     <% end %>
 
-    <h1><%= story.title.capitalize %></h1>
+
+    <h1><%= link_to story.title.capitalize, story_path(story), data: { turbolinks: false } %></h1>
     <h4>By <%= story.author.username.capitalize %></h4>
     <div class="story-card-text">
       <p class="story-card-p"><%= story.content %></p>
