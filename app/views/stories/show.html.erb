@@ -39,8 +39,13 @@
   </div>
 
   <div class="story-text">
-    <%= @story.content %>
+    <% @story.content.split("\n").each do |paragraph| %>
+      <p><%= paragraph %></p>
+    <% end %>
+
   </div>
+
+  <%= render "shared/vibrating-zone" %>
 
 </div>
 
