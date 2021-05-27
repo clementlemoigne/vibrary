@@ -76,11 +76,13 @@ async function runDeviceEnumerationExample() {
 
 const initButtplug = () => {
   const btn = document.getElementById("toggle-scan");
-  btn.addEventListener("click", (event) => {
-    console.log("coucou");
-    event.preventDefault();
-    runDeviceEnumerationExample();
-  });
+  if (btn) {
+    btn.addEventListener("click", (event) => {
+      console.log("coucou");
+      event.preventDefault();
+      runDeviceEnumerationExample();
+    });
+  }
 };
 
 export { initButtplug };
