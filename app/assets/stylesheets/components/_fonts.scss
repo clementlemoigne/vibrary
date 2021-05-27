@@ -11,3 +11,12 @@ a {
     color: $blue;
   }
 }
+
+.caveat{
+  font-family: "Caveat";
+  color: $black;
+  * {
+    color: $black;
+
+  }
+}
