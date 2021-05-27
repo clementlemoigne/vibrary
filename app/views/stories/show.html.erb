@@ -1,0 +1,42 @@
+<div class="container-story col-12">
+
+  <div class="container-story-to-hide">
+    <div class="container-story-up d-flex justify-content-between align-items-center">
+      <%= link_to home_path do %>
+        <i class="fas fa-times close-icone"></i>
+      <% end %>
+
+      <div class="rating justify-content-between">
+        <i class="far fa-thumbs-up rating-icone"></i>
+        <i class="far fa-thumbs-down rating-icone"></i>
+      </div>
+    </div>
+
+    <div class="container-story-infos">
+      <div class="title-favorite d-flex justify-content-between">
+        <h1><%= @story.title.capitalize %></h1>
+        <% if @story.user_favorite(current_user) %>
+          <i class="fas fa-bookmark bookmark-icone"></i>
+        <% else %>
+          <i class="far fa-bookmark bookmark-icone"></i>
+        <% end %>
+      </div>
+      <h4>By <%= @story.author.username.capitalize %></h4>
+      <div class="d-flex justify-content-start">
+        <% @story.tags.each do |tag| %>
+          <div class="tag mr-3"><%= tag %></div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="container-story-vibrate">
+      <h3>Vibration</h3>
+      <i class="fas fa-toggle-off toggle-icone"></i>
+    </div>
+  </div>
+
+  <div class="story-text">
+    <%= @story.content %>
+  </div>
+
+</div>
