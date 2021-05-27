@@ -7,4 +7,9 @@ class StoriesController < ApplicationController
       @stories = Story.all
     end
   end
+  
+  def show
+    @story = Story.find(params[:id])
+    authorize @story
+  end
 end

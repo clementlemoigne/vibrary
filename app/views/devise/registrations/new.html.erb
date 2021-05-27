@@ -1,25 +1,62 @@
-<h2>Sign up</h2>
+<div class="container" id="sign-up">
+    <div class="vh-100 d-flex flex-column justify-content-start align-items-center p-6rem">
+  <%= image_tag "landing_logo.png", class: "logo-sign-up" %>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "w-100 px-3" } ) do |f| %>
+      <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+      <div class="form-inputs">
+        <div class="mb-3">
+          <div class="text-black"><p>Email Address:</p></div>
+          <div class="d-flex box-lightblue pl-3 block-input">
+            <div><i class="fas fa-envelope text-white"></i></div>
+            <div class="flex-grow-1">
+              <%= f.input :email,
+                    required: true,
+                    label: false,
+                    placeholder: "mail@email.com",
+                    input_html: { autocomplete: "email" }%>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <div class="text-black"><p>Password:</p></div>
+          <div class="d-flex box-lightblue pl-3 block-input">
+            <div><i class="fas fa-unlock text-white"></i></div>
+            <div class="flex-grow-1">
+              <%= f.input :password,
+                        label: false,
+                        required: true,
+                        placeholder: "password",
+                        input_html: { autocomplete: "new-password" } %>
+            </div>
+          </div>
+            <small class="text-black"><%= "#{@minimum_password_length} characters minimum" if @minimum_password_length %></small>
+        </div>
+
+
+        <div class="mb-3">
+          <div class="text-black"><p>Password confirmation:</p></div>
+          <div class="d-flex box-lightblue pl-3 block-input">
+            <div><i class="fas fa-unlock text-white"></i></div>
+            <div class="flex-grow-1">
+              <%= f.input :password,
+                        label: false,
+                        required: true,
+                        placeholder: "password",
+                        input_html: { autocomplete: "new-password" } %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Sign up", class:"btn-vibrary" %>
+      </div>
+    <% end %>
+      <div class="login_text w-100 p-3">
+        <%= render "devise/shared/links" %>
+      </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

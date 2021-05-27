@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'profiles/show'
+  get 'profiles/edit'
+  get 'profiles/update'
   devise_for :users
 
   unauthenticated :user do
@@ -11,7 +14,7 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  resources :stories, only: [ :index ] do
+  resources :stories, only: [ :index, :show ] do
     resources :favorites, only: [ :create ]
     resources :reactions, only: [ :create ]
     resources :readings, only: [ :create ]

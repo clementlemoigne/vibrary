@@ -1,0 +1,13 @@
+body,
+.text-black {
+  color: $black;
+}
+
+
+a {
+  text-decoration: none;
+  &:hover , &:active{
+    text-decoration: none;
+    color: $blue;
+  }
+}
