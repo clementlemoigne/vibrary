@@ -1,0 +1,19 @@
+.form-group {
+  margin-bottom: 0;
+
+  > label {
+    color: $black;
+  }
+}
+
+.block-input {
+  border-radius: 50px;
+  box-shadow: $shadow;
+}
+
+input.form-control {
+  background-color: $light-blue;
+  &:focus {
+    background-color: $light-blue;
+  }
+}

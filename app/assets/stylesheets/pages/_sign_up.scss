@@ -1,0 +1,35 @@
+#sign-up {
+  .login_text > a {
+    padding-left: 1.75rem;
+    color: $black;
+  }
+
+  .p-6rem {
+  padding-top: 6rem;
+  }
+}
+
+.logo-sign-up {
+  height: 15vh;
+  width: 15vh;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.btn-sign_up {
+  margin-top: 1.75rem;
+  text-align: center;
+  color: grey;
+  display: flex;
+  flex-direction: column;
+}
+
+.sign_up {
+  color: $black;
+  text-decoration: none;
+}
+
+.forgot_password {
+  color: $black;
+  text-decoration: none;
+}
