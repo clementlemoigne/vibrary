@@ -21,7 +21,7 @@
           <i class="far fa-bookmark bookmark-icone"></i>
         <% end %>
       </div>
-      <h4>By <%= @story.author.username.capitalize %></h4>
+      <h4>By <%= @story.author.username %></h4>
       <div class="d-flex justify-content-start">
         <% @story.tags.each do |tag| %>
           <div class="tag mr-3"><%= tag %></div>
