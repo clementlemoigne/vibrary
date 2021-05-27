@@ -1,5 +1,5 @@
-<div class="container">
-  <div class="vh-100 d-flex flex-column justify-content-center align-items-center">
+<div class="container" id="new_user">
+  <div class="vh-100 d-flex flex-column justify-content-start align-items-center p-6rem">
   <%= image_tag "landing_logo.png", class: "logo-sign-up" %>
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "w-100 px-3" } ) do |f| %>
@@ -32,7 +32,7 @@
         </div>
       </div>
 
-        <%= f.input :remember_me, as: :boolean, wrapper_html: {class: "d-flex justify-content-end"} if devise_mapping.rememberable? %>
+        <%= f.input :remember_me, as: :boolean, wrapper_html: {class: "d-flex justify-content-end color-black-vibrary"} if devise_mapping.rememberable? %>
     </div>
 
     <div class="d-flex justify-content-between">
@@ -42,7 +42,9 @@
       </div>
     </div>
   <% end %>
+  <div class="btn-sign_up">
+    <%= render "devise/shared/links" %>
+  </div>
 
-  <%# <%= render "devise/shared/links" %>
   </div>
 </div>
