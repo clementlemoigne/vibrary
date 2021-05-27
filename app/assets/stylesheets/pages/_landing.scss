@@ -7,11 +7,12 @@
 }
 
 .vibrator_img {
-  height: 10vh;
-  width: 10vh;
+  height: 3vh;
+  width: 3vh;
   -o-object-fit: contain;
   object-fit: contain;
-  display: block;
-  margin: auto;
-  margin-top: 20px;
+}
+
+.btn-vibrary {
+  color: white;
 }
