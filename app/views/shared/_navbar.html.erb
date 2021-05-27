@@ -1,16 +1,16 @@
 <div class="navbar-container col-12 d-flex justify-content-center fixed-bottom">
   <div class="navbar col-10 d-flex justify-content-between">
-    <div>
-      <i class="fas fa-home navbar-icon" id="home-icone"></i>
+    <div class="navbar-icon">
+      <%= link_to "<i class='fas fa-home' id='home-icone'></i>".html_safe, home_path %>
     </div>
-    <div>
-      <i class="fas fa-user navbar-icon" id="profile-icone"></i>
+    <div class="navbar-icon">
+      <%= link_to "<i class='fas fa-user' id='profile-icone'></i>".html_safe, "#" %>
     </div>
-    <div>
-      <i class="fas fa-search navbar-icon" id="search-icone"></i>
+    <div class="navbar-icon">
+      <%= link_to "<i class='fas fa-search' id='search-icone'></i>".html_safe, stories_path %>
     </div>
-    <div>
-      <i class="fas fa-cog navbar-icon" id="settings-icone"></i>
+    <div class="navbar-icon">
+      <%= link_to "<i class='fas fa-cog' id='settings-icone'></i>".html_safe, "#" %>
     </div>
   </div>
 </div>
