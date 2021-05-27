@@ -1,0 +1,6 @@
+<% Story::TAGS.each do |tag| %>
+  <input class="my-checkboxes" type="checkbox" id="<%= tag %>">
+  <label for="<%= tag %>"><%= tag %></label>
+<% end %>
+<input class="my-checkboxes vibrations" type="checkbox" id="vibration_compatibility">
+<label for="vibration_compatibility">Vibration</label>
