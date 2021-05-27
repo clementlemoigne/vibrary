@@ -1,0 +1,39 @@
+.my-checkboxes {
+  position: absolute;
+  transform: scale(0);
+}
+
+.my-checkboxes .vibrations + label {
+  cursor: pointer;
+  background-color: #F9F1FB;
+  border: #6A3EAF;
+  border-radius: 50rem;
+  font-weight: lighter;
+  font-size: small;
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+  padding: 0.1rem 0.5rem;
+}
+
+.my-checkboxes + label {
+  cursor: pointer;
+  background-color: #F9F1FB;
+  border-radius: 50rem;
+  font-weight: lighter;
+  font-size: small;
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+  padding: 0.1rem 0.5rem;
+}
+
+.my-checkboxes:checked + label {
+  cursor: pointer;
+  background-color: #edc1dc;
+  border-radius: 50rem;
+  font-weight: lighter;
+  font-size: small;
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+  padding: 0.1rem 0.5rem;
+}
+
