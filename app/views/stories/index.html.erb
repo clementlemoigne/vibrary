@@ -2,12 +2,14 @@
   <h1 class="page-title">Search</h1>
 </div>
 
-<div>
-    <datalist id="search-bar">
-        <option>BDSM</option>
-        <option>Romance</option>
-    </datalist>
-    <input  autoComplete="on" list="search-bar" placeholder="What are you looking for?"/>
+<div class="form-group">
+  <%= form_tag stories_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control my-2",
+      placeholder: "What are you looking for ?" %>
+      <%= submit_tag "Search", class: "btn" %>
+  <% end %>
 </div>
 
 <div class="content">
