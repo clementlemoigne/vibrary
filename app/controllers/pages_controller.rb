@@ -5,6 +5,11 @@ class PagesController < ApplicationController
   def home
     @all_stories = Story.all
     @stories_bookmarked = Favorite.where(user_id: current_user.id).map(&:story)
+    @stories_current_reading = Reading.where(user_id: current_user.id).map(&:story)
+    # @stories_for_you = Story.where( (current_user.whitelist & Story.first.tags))
+    # @stories_for_you = Story.where(tags: current_user.whitelist)
+    # @stories_for_you = Story.includes(tags: current_user.whitelist & Story.first.tags)
+    # raise
   end
 
   def landing

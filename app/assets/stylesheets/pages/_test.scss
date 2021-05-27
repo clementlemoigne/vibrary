@@ -1,0 +1,16 @@
+.div-parent {
+  position: relative;
+  z-index: 1;
+}
+
+.div-yellow {
+  height: 60px;
+  position: sticky;
+  opacity: 0.2;
+  top: 100px;
+  z-index: 1;
+}
+
+.div-text {
+  z-index: 2;
+}

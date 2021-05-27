@@ -1775,7 +1775,7 @@ builtin-status-codes@^3.0.0:
   resolved "https://registry.yarnpkg.com/builtin-status-codes/-/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
   integrity sha1-hZgoeOIbmOHGZCXgPQF0eI9Wnug=
 
-buttplug@^1.0.1:
+buttplug@^1.0.14:
   version "1.0.14"
   resolved "https://registry.yarnpkg.com/buttplug/-/buttplug-1.0.14.tgz#496ee71c727834aff2599cf67336c3b4ec37752d"
   integrity sha512-dS37FMWkF8utX1/cezKvhyB7vcIAJ5KfgF1cLAgXuse0MvXC2NM+o65+ndgZNXPDQnF589drevdeIvKUKxrBHw==
