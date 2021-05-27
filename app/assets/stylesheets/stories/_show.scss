@@ -5,6 +5,9 @@
 
 .container-story-up {
   height: 10vh;
+  position: sticky;
+  top: 0px;
+  background-color: white;
 
   .close-icone {
     font-size: xx-large;
@@ -21,6 +24,9 @@
   }
 }
 
+.container-story-to-hide {
+  background-color: white;
+}
 
 .container-story-infos {
   height: 22vh;
@@ -76,6 +82,15 @@
   font-family: 'Poppins';
   font-weight: lighter;
   font-size: larger;
+  z-index: 2;
 }
 
-
+// .vibrating-zone {
+//   background-color: $rose;
+//   opacity: 30%;
+//   height: 160px;
+//   width: 100%;
+//   position: sticky;
+//   top: 45vh;
+//   z-index: -1;
+// }

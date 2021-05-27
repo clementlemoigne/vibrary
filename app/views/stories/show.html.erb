@@ -1,17 +1,20 @@
 <div class="container-story col-12">
 
-  <div class="container-story-to-hide">
-    <div class="container-story-up d-flex justify-content-between align-items-center">
-      <%= link_to home_path do %>
-        <i class="fas fa-times close-icone"></i>
-      <% end %>
+  <%# <div class="vibrating-zone">
+  </div> %>
 
-      <div class="rating justify-content-between">
-        <i class="far fa-thumbs-up rating-icone"></i>
-        <i class="far fa-thumbs-down rating-icone"></i>
-      </div>
+  <div class="container-story-up d-flex justify-content-between align-items-center">
+    <%= link_to home_path do %>
+      <i class="fas fa-times close-icone"></i>
+    <% end %>
+
+    <div class="rating justify-content-between">
+      <i class="far fa-thumbs-up rating-icone"></i>
+      <i class="far fa-thumbs-down rating-icone"></i>
     </div>
+  </div>
 
+  <div class="container-story-to-hide">
     <div class="container-story-infos">
       <div class="title-favorite d-flex justify-content-between">
         <h1><%= @story.title.capitalize %></h1>
@@ -40,3 +43,4 @@
   </div>
 
 </div>
+
