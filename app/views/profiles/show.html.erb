@@ -6,3 +6,12 @@
     <%= link_to "Change your email/password", edit_user_registration_path %>
   </div>
 </div>
+
+<%= render "shared/navbar" %>
+
+<script type="text/javascript">
+  document.querySelectorAll(".navbar-icon").forEach ((element) => {
+    element.style.opacity = 0.3;
+  });
+  document.getElementById("settings-icone").style.opacity = 1;
+</script>
