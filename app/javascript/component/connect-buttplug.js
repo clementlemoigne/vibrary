@@ -28,31 +28,42 @@ async function runDeviceEnumerationExample() {
 
     const btn_on = document.getElementById("vibe-btn-on");
     await window.addEventListener('scroll', async (event) => {
-      //event.preventDefault();
-      //console.log("coucou");
-      const positionTextVibingSize = document.querySelector(".vibe").getBoundingClientRect();
       const positionTextVibingTop = document.querySelector(".vibe").getBoundingClientRect().y;
       const positionTextVibingBottom = document.querySelector(".vibe").getBoundingClientRect().bottom;
       const positionFocusZoneTop = document.querySelector(".vibrating-zone").getBoundingClientRect().y;
       const positionFocusZoneBottom = document.querySelector(".vibrating-zone").getBoundingClientRect().bottom;
-      // console.log(positionVibrationZone);
-      // console.log(positionTextVibingSize);
-      if (positionTextVibingTop < positionFocusZoneTop) {
-        if ((positionTextVibingBottom < positionFocusZoneTop) || (positionTextVibingTop > positionFocusZoneBottom)) {
-          console.log("STOP");
-          await device.stop();
-        } else {
-          console.log("WIZZZZZZZZ");
-          try {
-            await device.vibrate(0.2);
-          } catch (e) {
-            console.log(e);
-            if (e instanceof Buttplug.ButtplugDeviceError) {
-              console.log("got a device error!");
-            }
+      if ((positionTextVibingTop < positionFocusZoneBottom) && (positionFocusZoneTop < positionTextVibingBottom )) {
+        console.log("je suis dedans");
+        try {
+          await device.vibrate(0.2);
+        } catch (e) {
+          console.log(e);
+          if (e instanceof Buttplug.ButtplugDeviceError) {
+            console.log("got a device error!");
           }
         }
+      } else {
+        console.log("je suis dehors");
+        await device.stop();
       }
+
+      // if (positionTextVibingTop < positionFocusZoneTop) {
+      //   if ((positionTextVibingBottom < positionFocusZoneTop) || (positionTextVibingTop > positionFocusZoneBottom)) {
+      //     console.log("STOP");
+      //     await device.stop();
+      //   } else {
+      //     console.log("WIZZZZZZZZ");
+      //     try {
+      //       await device.vibrate(0.2);
+      //     } catch (e) {
+      //       console.log(e);
+      //       if (e instanceof Buttplug.ButtplugDeviceError) {
+      //         console.log("got a device error!");
+      //       }
+      //     }
+      //   }
+      // }
+
     });
 
     const btn_off = document.getElementById("stop-vibing");
