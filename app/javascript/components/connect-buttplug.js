@@ -32,7 +32,7 @@ async function runDeviceEnumerationExample() {
     const positionFocusZoneTop = document.querySelector(".vibrating-zone").getBoundingClientRect().y;
     const positionFocusZoneBottom = document.querySelector(".vibrating-zone").getBoundingClientRect().bottom;
 
-    const onOffArray = [];
+    const arrayOfHashes = [];
     document.querySelectorAll('[data-vibe]').forEach((p, index) => {
       p.dataset.id = index;
       const onOffHash = {
@@ -40,34 +40,34 @@ async function runDeviceEnumerationExample() {
         intensity: p.dataset.intensity,
         state: 0
       };
-      onOffArray.push(onOffHash)
-      console.log(onOffArray);
+      arrayOfHashes.push(onOffHash)
+      console.log(arrayOfHashes);
 
       window.addEventListener('scroll', async (event) => {
         if ((p.getBoundingClientRect().y < positionFocusZoneBottom) && (positionFocusZoneTop < p.getBoundingClientRect().bottom)) {
-          onOffArray[index].state = 1;
+          arrayOfHashes[index].state = 1;
         } else {
-          onOffArray[index].state = 0;
+          arrayOfHashes[index].state = 0;
         }
 
-        console.log(onOffArray);
+        const onOffArray = []
+        arrayOfHashes.forEach((hash) => {
+          onOffArray.push(hash.state);
+        });
 
-
-        // const isOff = (currentValue) => currentValue === 0;
-
-        // if (onOffHash.every(isOff)) {
-        //   await device.stop();
-        // } else {
-        //   console.log(p[index].dataset.intensity);
-        //   try {
-        //     await device.vibrate(0.2);
-        //   } catch (e) {
-        //     console.log(e);
-        //     if (e instanceof Buttplug.ButtplugDeviceError) {
-        //       console.log("got a device error!");
-        //     }
-        //   }
-        // }
+        const isOff = (currentValue) => currentValue === 0;
+        if (onOffArray.every(isOff)) {
+          await device.stop();
+        } else {
+          try {
+            await device.vibrate(1.0);
+          } catch (e) {
+            console.log(e);
+            if (e instanceof Buttplug.ButtplugDeviceError) {
+              console.log("got a device error!");
+            }
+          }
+        }
       });
 
       // const positionTextVibingTop = document.querySelectorAll(".vibe").getBoundingClientRect().y;
