@@ -18,7 +18,9 @@
         <% if @story.user_favorite(current_user) %>
           <i class="fas fa-bookmark bookmark-icone"></i>
         <% else %>
+        <%= link_to story_favorites_path(@story), method: :post do %>
           <i class="far fa-bookmark bookmark-icone"></i>
+      <% end %>
         <% end %>
       </div>
       <h4>By <%= @story.author.username %></h4>
