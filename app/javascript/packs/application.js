@@ -27,8 +27,10 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { initButtplug } from '../components/connect-buttplug';
+import { toggleVibration } from '../components/toggle-switch';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initButtplug();
+  toggleVibration();
 });
