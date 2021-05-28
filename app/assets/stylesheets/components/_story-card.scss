@@ -43,12 +43,15 @@
   .story-card-p {
     margin-top: 16px;
     font-family: 'Poppins';
-    // font-weight: 200;
+    //font-weight: lighter;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    font-weight: 200;
     overflow: hidden;
-    text-overflow: ellipsis;
-    height: 100%;
   }
 }
+
 
 .story-card-row-up {
   height: 60%;
