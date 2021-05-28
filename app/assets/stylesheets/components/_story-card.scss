@@ -43,11 +43,13 @@
     margin-top: 16px;
     font-family: 'Poppins';
     font-weight: lighter;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis;
-    height: 100%;
   }
 }
+
 
 .story-card-row-up {
   height: 60%;
