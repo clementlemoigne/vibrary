@@ -14,6 +14,10 @@
   padding: 16px;
   position: relative;
 
+    a {
+    color: $dark-rose;
+  }
+
   .story-card-icone {
     position: absolute;
     right: 34px;
@@ -78,4 +82,14 @@
 
 .intensity-icone {
   color: $rose;
+}
+
+.fas {
+    // color: $rose;
+  color: $dark-rose;
+}
+
+.far {
+  // color: $rose;
+  color: $dark-rose;
 }

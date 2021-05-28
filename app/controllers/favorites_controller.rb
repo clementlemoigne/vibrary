@@ -6,6 +6,4 @@ class FavoritesController < ApplicationController
     @favorite.save
     redirect_to landing_path
   end
-
-
 end
