@@ -2,8 +2,13 @@
   <div class="story-card-row story-card-row-up">
     <% if story.user_favorite(current_user) %>
       <i class="story-card-icone fas fa-bookmark"></i>
+    <%# <% if story.user_favorite(current_user) = false %>
+      <%# <i class="story-card-icone fas fa-bookmark"></i> %>
+    <%# <% else %>
     <% else %>
-      <i class="story-card-icone far fa-bookmark"></i>
+      <%= link_to story_favorites_path(story), method: :post do %>
+        <i class="story-card-icone fas fa-bookmark"></i>
+      <% end %>
     <% end %>
 
 
