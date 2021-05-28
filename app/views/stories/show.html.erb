@@ -31,7 +31,7 @@
 
     <div class="container-story-vibrate">
       <h3>Vibration</h3>
-      <%# <i class="fas fa-toggle-off toggle-icone" id="toggle-scan"></i> %>
+      <% # <i class="fas fa-toggle-off toggle-icone" id="toggle-scan"></i> %>
       <a href="#" id="toggle-scan">Scan</a>
       <a href="#" id="stop-vibing">Stop</a>
     </div>
@@ -60,3 +60,17 @@
 
 </div>
 
+<script type="text/javascript">
+  window.addEventListener('scroll', async (event) => {
+    const positionTextVibingSize = document.querySelector(".vibe").getBoundingClientRect();
+    const positionTextVibingTop = document.querySelector(".vibe").getBoundingClientRect().y;
+    const positionTextVibingBottom = document.querySelector(".vibe").getBoundingClientRect().bottom;
+    const positionFocusZoneTop = document.querySelector(".vibrating-zone").getBoundingClientRect().y;
+    const positionFocusZoneBottom = document.querySelector(".vibrating-zone").getBoundingClientRect().bottom;
+    if ((positionTextVibingTop < positionFocusZoneBottom) && (positionFocusZoneTop < positionTextVibingBottom )) {
+      console.log("je suis dedans");
+    } else {
+      console.log("je suis dehors")
+    }
+  });
+</script>
