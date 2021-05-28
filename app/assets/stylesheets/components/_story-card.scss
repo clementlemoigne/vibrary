@@ -1,6 +1,7 @@
 .story-card {
   height: 40vh;
-  border: 0.5mm solid $rose;
+  // border: 0.5mm solid $rose;
+  border: 0.6mm solid $rose;
   padding: 0;
   border-radius: 8px;
   box-shadow: 2px 2px 8px rgba(218, 221, 223, 0.4);
@@ -26,7 +27,7 @@
 
   h1 {
     font-family: 'Poppins';
-    font-weight: lighter;
+    // font-weight: 300;
     font-size: x-large;
     white-space: nowrap;
     overflow: hidden;
@@ -42,10 +43,11 @@
   .story-card-p {
     margin-top: 16px;
     font-family: 'Poppins';
-    font-weight: lighter;
+    //font-weight: lighter;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    font-weight: 200;
     overflow: hidden;
   }
 }
