@@ -89,7 +89,48 @@
   }
 }
 
+//Toggle slider design
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
 
+.switch input {
+  opacity: 0;
+}
+
+.sliding {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  border: 2px solid #edc1dc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+  margin-top: 8px;
+}
+
+.sliding:before {
+  position: absolute;
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border: 2px solid #edc1dc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .sliding {
+  background-color: #edc1dc;
+}
 // .vibrating-zone {
 //   background-color: $rose;
 //   opacity: 30%;
