@@ -33,17 +33,20 @@ async function runDeviceEnumerationExample() {
     const positionFocusZoneBottom = document.querySelector(".vibrating-zone").getBoundingClientRect().bottom;
 
     const arrayOfHashes = [];
-    document.querySelectorAll('[data-vibe]').forEach((p, index) => {
-      p.dataset.id = index;
-      const onOffHash = {
-        index: p.dataset.id,
-        intensity: p.dataset.intensity,
-        state: 0
-      };
-      arrayOfHashes.push(onOffHash)
-      console.log(arrayOfHashes);
 
-      window.addEventListener('scroll', async (event) => {
+
+    window.addEventListener('scroll', async (event) => {
+
+      document.querySelectorAll('[data-vibe]').forEach((p, index) => {
+        p.dataset.id = index;
+        const onOffHash = {
+          index: p.dataset.id,
+          intensity: p.dataset.intensity,
+          state: 0
+        };
+        arrayOfHashes[index] = onOffHash;
+        console.log(arrayOfHashes);
+
         if ((p.getBoundingClientRect().y < positionFocusZoneBottom) && (positionFocusZoneTop < p.getBoundingClientRect().bottom)) {
           arrayOfHashes[index].state = 1;
         } else {
@@ -57,10 +60,10 @@ async function runDeviceEnumerationExample() {
 
         const isOff = (currentValue) => currentValue === 0;
         if (onOffArray.every(isOff)) {
-          await device.stop();
+          device.stop();
         } else {
           try {
-            await device.vibrate(1.0);
+            device.vibrate(1.0);
           } catch (e) {
             console.log(e);
             if (e instanceof Buttplug.ButtplugDeviceError) {
@@ -69,47 +72,10 @@ async function runDeviceEnumerationExample() {
           }
         }
       });
-
-      // const positionTextVibingTop = document.querySelectorAll(".vibe").getBoundingClientRect().y;
-      // const positionTextVibingBottom = document.querySelectorAll(".vibe").getBoundingClientRect().bottom;
-      // const positionFocusZoneTop = document.querySelector(".vibrating-zone").getBoundingClientRect().y;
-      // const positionFocusZoneBottom = document.querySelector(".vibrating-zone").getBoundingClientRect().bottom;
-      // if ((positionTextVibingTop < positionFocusZoneBottom) && (positionFocusZoneTop < positionTextVibingBottom )) {
-      //   console.log("je suis dedans");
-      //   try {
-      //     await device.vibrate(0.2);
-      //   } catch (e) {
-      //     console.log(e);
-      //     if (e instanceof Buttplug.ButtplugDeviceError) {
-      //       console.log("got a device error!");
-      //     }
-      //   }
-      // } else {
-      //   console.log("je suis dehors");
-      //   await device.stop();
-      // }
-
-    // if (positionTextVibingTop < positionFocusZoneTop) {
-    //   if ((positionTextVibingBottom < positionFocusZoneTop) || (positionTextVibingTop > positionFocusZoneBottom)) {
-    //     console.log("STOP");
-    //     await device.stop();
-    //   } else {
-    //     console.log("WIZZZZZZZZ");
-    //     try {
-    //       await device.vibrate(0.2);
-    //     } catch (e) {
-    //       console.log(e);
-    //       if (e instanceof Buttplug.ButtplugDeviceError) {
-    //         console.log("got a device error!");
-    //       }
-    //     }
-    //   }
-    // }
-
     });
 
     const btn_off = document.getElementById("stop-vibing");
-    await btn_off.addEventListener("click", async (event) => {
+    btn_off.addEventListener("click", async (event) => {
       event.preventDefault();
       console.log("btn stop");
       await device.stop();
@@ -138,9 +104,7 @@ const initButtplug = () => {
   }
 };
 
-export {
-  initButtplug
-};
+export { initButtplug };
 
 // document.addEventListener("DOMContentLoaded", () => {
 //   const btn = document.getElementById("toggle-scan");

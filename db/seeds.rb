@@ -146,16 +146,7 @@ story_nath_3 = Story.create!(
 
   Watching him touching me, filling me has us unravelling rapidly, “come baby, come now!” he demands, his clever fingers increasing their fantastic rhythm, matching the increasing speed of my strokes up and down his ever hardening shaft perfectly.
 
-  I fall hard, spectacularly as the coiled tension releases like a cracked whip in a blinding shudder that’s intensified by Christian’s vicious pulsing inside me, the aftershocks of our shared orgasm prolonging my gratification. Christian pants into my neck, dropping tender, out-of-breath kisses behind my ear as we float back to our senses.
-
-
-
-
-
-
-
-
-  "
+  I fall hard, spectacularly as the coiled tension releases like a cracked whip in a blinding shudder that’s intensified by Christian’s vicious pulsing inside me, the aftershocks of our shared orgasm prolonging my gratification. Christian pants into my neck, dropping tender, out-of-breath kisses behind my ear as we float back to our senses."
 )
 
 # Marks Granny as one of Bree's favorite authors
