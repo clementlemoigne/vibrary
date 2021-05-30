@@ -4,11 +4,11 @@ class ProfilePolicy < ApplicationPolicy
       scope.all
     end
   end
-  
+
   def show?
-    false
+    true
   end
-  
+
   def edit?
     true
   end

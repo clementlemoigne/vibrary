@@ -21,6 +21,7 @@
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
+    <%= f.input :whitelist, as: :check_boxes, collection: Story::TAGS.each %>
   </div>
 
   <div class="form-actions">
