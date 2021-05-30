@@ -34,7 +34,6 @@ async function runDeviceEnumerationExample() {
 
     const arrayOfHashes = [];
 
-
     window.addEventListener('scroll', async (event) => {
 
       document.querySelectorAll('[data-vibe]').forEach((p, index) => {
@@ -45,7 +44,6 @@ async function runDeviceEnumerationExample() {
           state: 0
         };
         arrayOfHashes[index] = onOffHash;
-        console.log(arrayOfHashes);
 
         if ((p.getBoundingClientRect().y < positionFocusZoneBottom) && (positionFocusZoneTop < p.getBoundingClientRect().bottom)) {
           arrayOfHashes[index].state = 1;
@@ -53,25 +51,24 @@ async function runDeviceEnumerationExample() {
           arrayOfHashes[index].state = 0;
         }
 
-        const onOffArray = []
-        arrayOfHashes.forEach((hash) => {
-          onOffArray.push(hash.state);
-        });
-
-        const isOff = (currentValue) => currentValue === 0;
-        if (onOffArray.every(isOff)) {
-          device.stop();
-        } else {
+        // console.log(arrayOfHashes);
+        const vibingP = arrayOfHashes.find(element => element.state === 1);
+        if (vibingP) {
+          // console.log("I'm on");
           try {
-            device.vibrate(1.0);
+            device.vibrate(parseFloat(vibingP.intensity));
           } catch (e) {
             console.log(e);
             if (e instanceof Buttplug.ButtplugDeviceError) {
               console.log("got a device error!");
             }
           }
+        } else {
+          // console.log("I'm off");
+          device.stop();
         }
       });
+
     });
 
     const btn_off = document.getElementById("stop-vibing");
