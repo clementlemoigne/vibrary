@@ -1,7 +1,7 @@
 <h1>Edit your preferences <%= @profile.username %></h1>
 
-<%= simple_form_for @profile do |f| %>
-    <%= f.input :whitelist %>
+<%= simple_form_for @profile, url: profile_path, method: :patch do |f| %>
+    <%= f.input :whitelist, as: :check_boxes, collection: Story::TAGS.each %>
     <%= f.button :submit, "Envoyer", class: "btn btn-dark my-auto" %>
 <% end %>
 
