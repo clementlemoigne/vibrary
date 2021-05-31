@@ -31,6 +31,11 @@
     <%= render "shared/carousel-story-cards", stories: @author.stories.sort_by(&:updated_at).reverse!.take(3) %>
   </div>
 
+  <div class="content">
+    <h2 class="title-carousel">Best</h2>
+    <%= render "shared/carousel-story-cards", stories: @stories_bookmarked %>
+  </div>
+
 </div>
 
 <%= render "shared/navbar" %>
