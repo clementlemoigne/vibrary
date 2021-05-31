@@ -12,7 +12,7 @@
 
 
     <h1><%= link_to story.title.capitalize, story_path(story) %></h1>
-    <h4>By <%= story.author.username %></h4>
+    <h4>By <%= link_to "#{story.author.username}", author_path(story.author) %></h4>
     <div class="story-card-text">
       <p class="story-card-p"><%= story.content %></p>
     </div>

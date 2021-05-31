@@ -1,1 +1,41 @@
-<h1>author page</h1>
+<div class="container-story col-12">
+
+  <div class="container-story-up d-flex justify-content-between align-items-center">
+    <%= link_to home_path do %>
+      <i class="fas fa-times close-icone"></i>
+    <% end %>
+  </div>
+
+    <div class="container-story-to-hide">
+      <div class="container-story-infos">
+        <div class="title-favorite d-flex justify-content-between">
+          <h1><%= @author.username.capitalize %></h1>
+          <% if @author.favorite_authors %>
+            <i class="fas fa-star star-icone"></i>
+          <% else %>
+            <i class="far fa-star star-icone"></i>
+          <% end %>
+        </div>
+        <h4>Author's main tags:</h4>
+      </div>
+      <div class="d-flex justify-content-start">
+        <% @author.stories.pluck(:tags).flatten.uniq.first(3).each do |tag| %>
+          <div class="tag mr-3"><%= tag %></div>
+        <% end %>
+      </div>
+    </div>
+
+  <div class="content">
+  <div id="readings" class="content-row">
+    <h2 class="title-carousel">Latest stories</h2>
+    <%= render "shared/carousel-story-cards", stories: @author.stories.sort_by(&:updated_at).reverse!.take(3) %>
+  </div>
+
+  <div class="content">
+    <h2 class="title-carousel">Best stories</h2>
+    <%= render "shared/carousel-story-cards", stories: @stories_bookmarked %>
+  </div>
+
+</div>
+
+<%= render "shared/navbar" %>
