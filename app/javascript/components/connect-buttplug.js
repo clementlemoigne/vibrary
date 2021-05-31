@@ -100,11 +100,7 @@ const initButtplug = () => {
       if (btnScan.dataset.scan === "off") {
         btnScan.classList = "fas fa-toggle-on toggle-icone";
         btnScan.dataset.scan = "on";
-      } else if (btnScan.dataset.scan === "on") {
-        btnScan.classList = "fas fa-toggle-off toggle-icone";
-        btnScan.dataset.scan = "off";
-        // TODO : DISCONNECT
-        // client.disconnect();
+        document.querySelector(".vibrating-zone").style.display = "block";
       }
     });
   }
