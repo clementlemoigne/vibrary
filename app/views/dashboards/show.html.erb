@@ -5,11 +5,12 @@
 </div>
 
 <div class="content">
-  <div>
-    <% @stories.each do |story| %>
-      <%= render "shared/story-card", story: story %>
-    <% end %>
-  </div>
+  <h2 class="title-carousel">Your stories</h2>
+    <div class="co">
+        <% @stories.each do |story| %>
+          <%= render "shared/story-card", story: story %>
+        <% end %>
+    </div>
 </div>
 
 <%= render "shared/navbar" %>

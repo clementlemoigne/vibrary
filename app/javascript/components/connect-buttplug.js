@@ -101,6 +101,9 @@ const initButtplug = () => {
         btnScan.classList = "fas fa-toggle-on toggle-icone";
         btnScan.dataset.scan = "on";
         document.querySelector(".vibrating-zone").style.display = "block";
+        document.getElementById("stop-vibing").style.display = "block";
+      } else if (btnScan.dataset.scan === "on") {
+        document.location.reload();
       }
     });
   }
