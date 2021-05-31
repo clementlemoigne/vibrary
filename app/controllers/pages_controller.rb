@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
-
-  skip_before_action :authenticate_user!, only: [ :landing, :buttplug ]
+  skip_before_action :authenticate_user!, only: [:landing, :buttplug]
 
   def home
     @all_stories = policy_scope(Story).sort_by { |story| story.created_at }

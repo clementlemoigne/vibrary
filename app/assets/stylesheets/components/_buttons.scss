@@ -8,3 +8,19 @@
 .btn-shadowed {
   box-shadow: 0px 10px 20px 0px #655f7333;
 }
+
+.btn-pink {
+  background-color: $dark-rose;
+  color: white;
+  padding: 6px 18px;
+  margin-left: 16px;
+  border-radius: 50px;
+}
+
+.btn-ligh-pink {
+  background-color: $rose;
+  color: white;
+  padding: 6px 18px;
+  margin-left: 16px;
+  border-radius: 50px;
+}
