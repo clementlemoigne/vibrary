@@ -17,6 +17,12 @@
 @import "pages/test";
 @import "stories/show";
 
+html {
+  scroll-padding-top: 8rem;
+  scroll-behavior: smooth;
+}
+
+
 body {
   background-color: white;
 }
