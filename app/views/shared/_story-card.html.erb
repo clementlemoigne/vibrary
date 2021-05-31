@@ -20,21 +20,24 @@
 
   <div class="story-card-row story-card-row-down">
     <div class="story-card-infos">
-      <div class="d-flex justify-content-between pt-3">
-        <div class="intensity">
-          <% if story.intensity %>
-            <% (story.intensity).times do %>
-              <i class="intensity-icone fas fa-heart"></i>
-            <% end %>
-            <% (5-story.intensity).times do %>
-              <i class="intensity-icone far fa-heart"></i>
-            <% end %>
-          <% end %>
+      <div class="d-flex justify-content-between py-3 align-items-center">
+
+        <div class="likes d-flex">
+          <i class="info-icon far fa-thumbs-up"></i>
+          <p class="info-text"><%= story.average_reactions %></p>
         </div>
-        <div class="time d-flex">
-          <i class="p-1 far fa-clock"></i>
-          <p><%= story.reading_time %>min</p>
+
+        <% if story.vibration_compatibility %>
+          <div class="vibe-compatibility">
+            <i class="info-icon fas fa-broadcast-tower"></i>
+          </div>
+        <% end %>
+
+        <div class="readings d-flex">
+          <i class="info-icon fas fa-eye"></i>
+          <p class="info-text"><%= story.readings.count %></p>
         </div>
+
       </div>
       <div class="d-flex justify-content-between">
         <% story.tags.each do |tag| %>
