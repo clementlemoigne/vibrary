@@ -22,13 +22,14 @@ class Story < ApplicationRecord
     self.favorites.pluck(:user_id).include?(user.id)
   end
 
-  def average_reactions
-    upvoted = 0
-    downvoted = 0
-    self.reactions.each do |reaction|
-      reaction.upvoted ? upvoted += 1 : downvoted += 1
-    end
-    upvoted - downvoted
+  def score_for_user(user)
+    tags.select { |tag| user.whitelist.include?(tag) }.size
+  end
+
+  def score
+    upvote = reactions.where(upvoted: true).count
+    downvote = reactions.where(upvoted: false).count
+    return upvote - downvote
   end
 
   private
