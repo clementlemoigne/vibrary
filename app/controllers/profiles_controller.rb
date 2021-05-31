@@ -13,6 +13,7 @@ class ProfilesController < ApplicationController
     @profile = User.find(current_user.id)
     authorize @profile
     @profile.update(profile_params)
+    # raise
     if @profile.save
       redirect_to profile_path
     else
@@ -23,6 +24,6 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:whitelist, :blacklist)
+    params.require(:user).permit(:whitelist, :blacklist)
   end
 end

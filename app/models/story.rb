@@ -32,7 +32,6 @@ class Story < ApplicationRecord
     return upvote - downvote
   end
 
-
   private
 
   def tags_should_be_in_the_list
@@ -40,4 +39,5 @@ class Story < ApplicationRecord
       errors.add(:tags, :inclusion)
     end
   end
+
 end

@@ -74,7 +74,7 @@ async function runDeviceEnumerationExample() {
     const btn_off = document.getElementById("stop-vibing");
     btn_off.addEventListener("click", async (event) => {
       event.preventDefault();
-      console.log("btn stop");
+      console.log("STOP");
       await device.stop();
     });
   });
@@ -94,18 +94,16 @@ const initButtplug = () => {
   const btn = document.getElementById("toggle-scan");
   if (btn) {
     btn.addEventListener("click", (event) => {
-      console.log("coucou");
       event.preventDefault();
       runDeviceEnumerationExample();
+      const btnScan = document.getElementById("toggle-scan");
+      if (btnScan.dataset.scan === "off") {
+        btnScan.classList = "fas fa-toggle-on toggle-icone";
+        btnScan.dataset.scan = "on";
+        document.querySelector(".vibrating-zone").style.display = "block";
+      }
     });
   }
 };
 
 export { initButtplug };
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   const btn = document.getElementById("toggle-scan");
-//   btn.addEventListener("click", (event) => {
-//     runDeviceEnumerationExample();
-//   });
-// });
