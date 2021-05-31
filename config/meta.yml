@@ -1,0 +1,5 @@
+meta_product_name: "Vibrary"
+meta_title: "Feel The Vibe"
+meta_description: "Vibrary is a collaborative, safe and connected erotic library. You'll find stories written by contributors, and connect them to your sextoys to truly feel the story!"
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards

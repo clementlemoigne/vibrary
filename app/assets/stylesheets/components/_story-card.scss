@@ -7,6 +7,7 @@
   box-shadow: 2px 2px 8px rgba(218, 221, 223, 0.4);
   flex-direction: column;
   margin: 0 10px;
+  margin-bottom: 10px;
 }
 
 .story-card-row {
@@ -70,7 +71,23 @@
   padding: 22px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around
+  justify-content: space-around;
+
+  .readings {
+    align-items: center;
+  }
+
+  .info-icon {
+    color: $pale-rose;
+    font-size: x-large;
+  }
+
+  .info-text {
+    padding-left: 10px;
+    margin: 0;
+    font-weight: bold;
+    color: $pale-rose;
+  }
 }
 
 .tag {

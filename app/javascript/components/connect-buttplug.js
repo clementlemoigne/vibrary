@@ -1,4 +1,8 @@
-import { buttplugInit, ButtplugClient, ButtplugEmbeddedConnectorOptions } from "buttplug";
+import {
+  buttplugInit,
+  ButtplugClient,
+  ButtplugEmbeddedConnectorOptions
+} from "buttplug";
 
 async function runDeviceEnumerationExample() {
   // Instantiate our wasm module. This only needs to be done once. If you did it
@@ -25,54 +29,55 @@ async function runDeviceEnumerationExample() {
     await new Promise(r => setTimeout(r, 1000));
     await device.stop();
 
+    const positionFocusZoneTop = document.querySelector(".vibrating-zone").getBoundingClientRect().y;
+    const positionFocusZoneBottom = document.querySelector(".vibrating-zone").getBoundingClientRect().bottom;
 
-    const btn_on = document.getElementById("vibe-btn-on");
-    await window.addEventListener('scroll', async (event) => {
-      const positionTextVibingTop = document.querySelector(".vibe").getBoundingClientRect().y;
-      const positionTextVibingBottom = document.querySelector(".vibe").getBoundingClientRect().bottom;
-      const positionFocusZoneTop = document.querySelector(".vibrating-zone").getBoundingClientRect().y;
-      const positionFocusZoneBottom = document.querySelector(".vibrating-zone").getBoundingClientRect().bottom;
-      if ((positionTextVibingTop < positionFocusZoneBottom) && (positionFocusZoneTop < positionTextVibingBottom )) {
-        console.log("je suis dedans");
-        try {
-          await device.vibrate(0.2);
-        } catch (e) {
-          console.log(e);
-          if (e instanceof Buttplug.ButtplugDeviceError) {
-            console.log("got a device error!");
-          }
+    const arrayOfHashes = [];
+
+    window.addEventListener('scroll', async (event) => {
+
+      document.querySelectorAll('[data-vibe]').forEach((p, index) => {
+        p.dataset.id = index;
+        const onOffHash = {
+          index: p.dataset.id,
+          intensity: p.dataset.intensity,
+          state: 0
+        };
+        arrayOfHashes[index] = onOffHash;
+
+        if ((p.getBoundingClientRect().y < positionFocusZoneBottom) && (positionFocusZoneTop < p.getBoundingClientRect().bottom)) {
+          arrayOfHashes[index].state = 1;
+        } else {
+          arrayOfHashes[index].state = 0;
         }
-      } else {
-        console.log("je suis dehors");
-        await device.stop();
-      }
 
-      // if (positionTextVibingTop < positionFocusZoneTop) {
-      //   if ((positionTextVibingBottom < positionFocusZoneTop) || (positionTextVibingTop > positionFocusZoneBottom)) {
-      //     console.log("STOP");
-      //     await device.stop();
-      //   } else {
-      //     console.log("WIZZZZZZZZ");
-      //     try {
-      //       await device.vibrate(0.2);
-      //     } catch (e) {
-      //       console.log(e);
-      //       if (e instanceof Buttplug.ButtplugDeviceError) {
-      //         console.log("got a device error!");
-      //       }
-      //     }
-      //   }
-      // }
+        // console.log(arrayOfHashes);
+        const vibingP = arrayOfHashes.find(element => element.state === 1);
+        if (vibingP) {
+          // console.log("I'm on");
+          try {
+            device.vibrate(parseFloat(vibingP.intensity));
+          } catch (e) {
+            console.log(e);
+            if (e instanceof Buttplug.ButtplugDeviceError) {
+              console.log("got a device error!");
+            }
+          }
+        } else {
+          // console.log("I'm off");
+          device.stop();
+        }
+      });
 
     });
 
     const btn_off = document.getElementById("stop-vibing");
-      await btn_off.addEventListener("click", async (event) => {
-        event.preventDefault();
-        console.log("btn stop");
-        await device.stop();
-      });
+    btn_off.addEventListener("click", async (event) => {
+      event.preventDefault();
+      console.log("STOP");
+      await device.stop();
     });
+  });
 
   client
     .addListener("deviceremoved", (device) => console.log(`Device Removed: ${device.Name}`));
@@ -89,18 +94,16 @@ const initButtplug = () => {
   const btn = document.getElementById("toggle-scan");
   if (btn) {
     btn.addEventListener("click", (event) => {
-      console.log("coucou");
       event.preventDefault();
       runDeviceEnumerationExample();
+      const btnScan = document.getElementById("toggle-scan");
+      if (btnScan.dataset.scan === "off") {
+        btnScan.classList = "fas fa-toggle-on toggle-icone";
+        btnScan.dataset.scan = "on";
+        document.querySelector(".vibrating-zone").style.display = "block";
+      }
     });
   }
 };
 
 export { initButtplug };
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   const btn = document.getElementById("toggle-scan");
-//   btn.addEventListener("click", (event) => {
-//     runDeviceEnumerationExample();
-//   });
-// });

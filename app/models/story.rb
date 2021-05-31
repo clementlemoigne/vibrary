@@ -10,23 +10,31 @@ class Story < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :global_search,
-    against: [ :title, :tags ],
-    associated_against: {
-      author: [ :username ]
-    },
-    using: {
-      tsearch: { prefix: true }
-    }
+                  against: [:title, :tags],
+                  associated_against: {
+                    author: [:username]
+                  },
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 
   def user_favorite(user)
     self.favorites.pluck(:user_id).include?(user.id)
   end
 
+  def score_for_user(user)
+    tags.select { |tag| user.whitelist.include?(tag) }.size
+  end
+
+  def score
+    upvote = reactions.where(upvoted: true).count
+    downvote = reactions.where(upvoted: false).count
+    return upvote - downvote
+  end
+
   private
 
   def tags_should_be_in_the_list
-    if (TAGS & tags).size != tags.size
-      errors.add(:tags, :inclusion)
-    end
+    errors.add(:tags, :inclusion) if (TAGS & tags).size != tags.size
   end
 end

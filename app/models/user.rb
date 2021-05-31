@@ -10,7 +10,14 @@ class User < ApplicationRecord
   has_many :reactions
   has_many :readings
 
+  # before_validation :reject_blank_subset_arrays
+
   private
+
+  def reject_blank_subset_arrays
+    self.whitelist&.reject!(&:blank?)
+    self.blacklist&.reject!(&:blank?)
+  end
 
   def whitelist_should_be_in_the_list
     if (Story::TAGS & whitelist).size != whitelist.size
