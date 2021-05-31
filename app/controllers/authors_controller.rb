@@ -1,7 +1,7 @@
 class AuthorsController < ApplicationController
 
   def show
-    @author = Story.find(params[:id]).author
+    @author = User.find(params[:id])
     authorize @author
   end
 end
