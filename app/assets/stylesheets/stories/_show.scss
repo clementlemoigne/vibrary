@@ -3,6 +3,7 @@
 }
 
 
+
 .container-story-up {
   height: 10vh;
   position: sticky;
@@ -43,6 +44,10 @@
   justify-content: space-around;
   margin: 12px 0;
 
+  a {
+  color:#e276b9;
+}
+
   h1 {
     font-family: 'Poppins';
     // font-weight: lighter;
@@ -61,6 +66,7 @@
   .bookmark-icone {
     font-size: xx-large;
     text-align: center;
+    color: $dark-rose;
   }
 }
 
