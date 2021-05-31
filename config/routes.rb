@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'profiles/show'
-  get 'profiles/edit'
-  get 'profiles/update'
+  # get 'profiles/show'
+  # get 'profiles/edit'
+  # get 'profiles/update'
   devise_for :users
 
   unauthenticated :user do
@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   resources :favorite_authors, only: [ :destroy ]
 
   resource :dashboard, only: [ :show ]
-  resource :profile, only: [ :edit, :update ]
+  resource :profile, only: [ :show, :edit, :update ]
 
   get 'test', to: 'pages#buttplug'
 end
