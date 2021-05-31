@@ -6,6 +6,11 @@ class StoriesController < ApplicationController
     searched_terms = [params[:query], params[:tag]].flatten.reject(&:blank?)
     @searched_stories = Story.global_search(searched_terms)
     @searched_stories = policy_scope(@searched_stories)
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def show

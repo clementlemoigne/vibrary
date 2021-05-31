@@ -34,3 +34,5 @@ document.addEventListener('turbolinks:load', () => {
   initButtplug();
   // toggleVibration();
 });
+
+import "controllers"
