@@ -18,8 +18,8 @@ class FavoritesController < ApplicationController
     @favorite.destroy
     if params["location"]
       redirect_to story_path(Story.find(@favorite.story.id))
-   else
-    redirect_to landing_path
-   end
+    else
+      redirect_to landing_path
+    end
   end
 end
