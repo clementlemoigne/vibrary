@@ -22,6 +22,15 @@ class Story < ApplicationRecord
     self.favorites.pluck(:user_id).include?(user.id)
   end
 
+  def average_reactions
+    upvoted = 0
+    downvoted = 0
+    self.reactions.each do |reaction|
+      reaction.upvoted ? upvoted += 1 : downvoted += 1
+    end
+    upvoted - downvoted
+  end
+
   private
 
   def tags_should_be_in_the_list
@@ -29,4 +38,5 @@ class Story < ApplicationRecord
       errors.add(:tags, :inclusion)
     end
   end
+
 end
