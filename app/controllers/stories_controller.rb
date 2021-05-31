@@ -1,11 +1,10 @@
 class StoriesController < ApplicationController
   def index
-    @stories = policy_scope(Story).order(created_at: :desc)
-    if params[:query].present?
-      @stories = Story.global_search(params[:query])
-    else
-      @stories = Story.all
-    end
+    @recommended_stories = policy_scope(Story).select { |story| story.tags.any?{ |tag| current_user.whitelist.include?(tag)}}
+    @recommended_stories = @recommended_stories.sort_by { |s| s.score_for_user(current_user) }.reverse
+    @best_stories = policy_scope(Story).sort_by { |story| story.score }.reverse
+    @searched_stories = Story.global_search(params[:query])
+    @searched_stories = policy_scope(@searched_stories)
   end
 
   def show

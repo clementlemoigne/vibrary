@@ -22,6 +22,17 @@ class Story < ApplicationRecord
     self.favorites.pluck(:user_id).include?(user.id)
   end
 
+  def score_for_user(user)
+    tags.select { |tag| user.whitelist.include?(tag) }.size
+  end
+
+  def score
+    upvote = reactions.where(upvoted: true).count
+    downvote = reactions.where(upvoted: false).count
+    return upvote - downvote
+  end
+
+
   private
 
   def tags_should_be_in_the_list

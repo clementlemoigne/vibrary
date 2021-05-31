@@ -12,19 +12,34 @@
   <% end %>
 </div>
 
-<div class="content">
-  <div id="recommended" >
-    <h2>Recommended for you</h2>
-    <%= render "shared/carousel-story-cards", stories: @stories %>
-  </div>
-</div>
+<% if params[:query].present? %>
 
-<div class="content">
-  <div id="recommended" >
-    <h2>Best rated</h2>
-    <%= render "shared/carousel-story-cards", stories: @stories %>
+  <div class="content">
+    <div id="recommended" >
+      <h2>Your results</h2>
+      <% @searched_stories.each do |story| %>
+        <%= render "shared/story-card", story: story %>
+      <% end %>
+    </div>
   </div>
-</div>
+
+<% else %>
+
+  <div class="content">
+    <div id="recommended" >
+      <h2>Best rated</h2>
+      <%= render "shared/carousel-story-cards", stories: @recommended_stories %>
+    </div>
+  </div>
+
+  <div class="content">
+    <div id="recommended" >
+      <h2>Best rated</h2>
+      <%= render "shared/carousel-story-cards", stories: @best_stories %>
+    </div>
+  </div>
+
+<% end %>
 
 <%= render "shared/navbar" %>
 
