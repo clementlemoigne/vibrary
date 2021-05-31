@@ -2,14 +2,18 @@
   <h1 class="page-title">Settings</h1>
 </div>
 <div class="content">
-  <div>
-    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-  </div>
-  <div id="recommended">
-    <%= link_to "Change your informations", edit_user_registration_path %>
-  </div>
-  <div>
-    <%= link_to "Change your preferences", edit_profile_path %>
+  <div class="content-btn d-flex flex-column align-items-center">
+    <div class="m-3">
+      <%= link_to "Change your preferences", edit_profile_path, class: "btn-pink" %>
+    </div>
+    <div id="recommended" class="m-3">
+      <%= link_to "Change your informations", edit_user_registration_path, class: "btn-pink" %>
+    </div>
+    <div class="logout m-3">
+      <div class="m-3">
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn-pink" %>
+      </div>
+    </div>
   </div>
 </div>
 

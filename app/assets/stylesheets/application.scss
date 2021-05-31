@@ -15,6 +15,7 @@
 @import "components/story-card";
 @import "pages/index";
 @import "pages/test";
+@import "profiles/edit";
 @import "stories/show";
 
 body {
@@ -56,3 +57,4 @@ body {
   right: 0px;
   z-index: -1;
 }
+

@@ -12,6 +12,7 @@ class ProfilesController < ApplicationController
   def update
     @profile = User.find(current_user.id)
     authorize @profile
+    # params[:user][:whitelist].reject(&:empty?)
     @profile.update(profile_params)
     # raise
     if @profile.save
@@ -24,6 +25,6 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:user).permit(:whitelist, :blacklist)
+    params.require(:user).permit(whitelist: [], blacklist: [])
   end
 end
