@@ -12,6 +12,10 @@ class User < ApplicationRecord
 
   # before_validation :reject_blank_subset_arrays
 
+  def is_favorite?(author)
+    favorite_authors.map { |fav| fav.author }.include?(author)
+  end
+    
   def upvoted?(story_id)
     reactions.where(upvoted: true).pluck(:story_id).include?(story_id)
   end
