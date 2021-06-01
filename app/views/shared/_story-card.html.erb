@@ -1,4 +1,4 @@
-<div class="container story-card col-9 d-flex" id="story-<%= story.id %>">
+<div class="container story-card col-9 d-flex mr-3" id="story-<%= story.id %>">
   <div class="story-card-row story-card-row-up">
     <% if story.user_favorite(current_user) %>
       <%= link_to favorite_path(Favorite.find_by(story: story, user: current_user)), remote: true, method: :delete do %>

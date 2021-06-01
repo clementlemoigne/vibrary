@@ -13,6 +13,7 @@
 @import "components/index";
 @import "components/navbar";
 @import "components/story-card";
+@import "dashboards/show";
 @import "pages/index";
 @import "pages/test";
 @import "profiles/edit";
@@ -33,7 +34,6 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-
 }
 
 .page-title {
