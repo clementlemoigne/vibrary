@@ -15,7 +15,6 @@
   }
 
   .rating {
-    width: 60px;
     display: flex;
     justify-content: space-around;
   }
@@ -151,6 +150,10 @@ input:checked + .sliding {
   padding-right: 10px;
   font-weight: bold;
   color: $pale-rose;
+  margin: 0;
+  text-align: center;
+  min-width: 30px;
+  height: 24px;
 }
 // .vibrating-zone {
 //   background-color: $rose;
