@@ -59,9 +59,8 @@ body {
   opacity: 30%;
   height: 40px;
   width: 100%;
-  position: fixed;
-  top: 46vh;
+  position: sticky;
+  bottom: 70vh;
   right: 0px;
   z-index: -1;
 }
-
