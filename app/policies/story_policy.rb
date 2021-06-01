@@ -2,8 +2,6 @@ class StoryPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all.reject{ |story| story.tags.any?{ |tag| user.blacklist.include?(tag)}}
-      #Story.all.reject{ |story| story.tags.any?{ |tag| User.first.blacklist.include?(tag)}}
-      #Story.all.select{ |story| story.tags.any?{ |tag| User.first.whitelist.include?(tag)}}
     end
   end
 
