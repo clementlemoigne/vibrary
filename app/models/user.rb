@@ -12,6 +12,18 @@ class User < ApplicationRecord
 
   # before_validation :reject_blank_subset_arrays
 
+  def upvoted?(story_id)
+    reactions.where(upvoted: true).pluck(:story_id).include?(story_id)
+  end
+
+  def downvoted?(story_id)
+    reactions.where(upvoted: false).pluck(:story_id).include?(story_id)
+  end
+
+  def voted?(story_id)
+    reactions.pluck(:story_id).include?(story_id)
+  end
+
   private
 
   def reject_blank_subset_arrays

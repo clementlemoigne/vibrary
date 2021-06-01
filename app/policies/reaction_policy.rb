@@ -10,10 +10,10 @@ class ReactionPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user  # Only story creator can update it
+    true
   end
 
   def destroy?
-    record.user == user  # Only story creator can destroy it
+    true
   end
 end
