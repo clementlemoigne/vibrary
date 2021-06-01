@@ -8,10 +8,10 @@ class ReactionsController < ApplicationController
   end
   
   def destroy
-    raise
     @reaction = Reaction.find(params[:id])
+    @story = Story.find(@reaction.story_id)
     authorize @reaction
     @reaction.destroy
-    redirect_to story_path(params[:story_id])
+    redirect_to story_path(@story.id)
   end
 end
