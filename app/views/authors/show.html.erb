@@ -31,6 +31,14 @@
     <%= render "shared/carousel-story-cards", stories: @author.stories.sort_by(&:updated_at).reverse!.take(3) %>
   </div>
 
+  <div class="content">
+    <h2 class="title-carousel">Best rated stories</h2>
+    <%# <%= render "shared/carousel-story-cards", stories: @author.best_rated_stories %>
+      <%# Récuperer les stories de l'auteur
+      .map qui créé un hash dans le quel j'ai une clef score et une clef story.
+      . sort by sur le hash _by_score. %>
+  </div>
+
 </div>
 
 <%= render "shared/navbar" %>
