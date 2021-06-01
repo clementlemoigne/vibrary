@@ -8,8 +8,28 @@
     <a href="#" id="stop-vibing" class="btn btn-pink" style="display:none">Stop</a>
 
     <div class="rating justify-content-between">
-      <i class="far fa-thumbs-up rating-icone"></i>
-      <i class="far fa-thumbs-down rating-icone"></i>
+
+      <% if current_user.downvoted?(@story.id) || !current_user.voted?(@story.id) %>
+        <%= link_to story_reactions_path(@story, params: { upvoted: true }), method: :post do %>
+          <i class="far fa-thumbs-up rating-icone"></i>
+        <% end %>
+      <% else %>
+        <%= link_to reaction_path(Reaction.find_by(story: @story, user: current_user)), method: :delete do %>
+          <i class="far fa-thumbs-up rating-icone"></i>
+        <% end %>
+      <% end %>
+
+      <p class="info-text"><%= @story.score%></p>
+
+      <% if current_user.upvoted?(@story.id) || !current_user.voted?(@story.id) %>
+        <%= link_to story_reactions_path(@story, params: { upvoted: false }), method: :post do %>
+          <i class="far fa-thumbs-down rating-icone"></i>
+        <% end %>
+      <% else %>
+        <%= link_to reaction_path(Reaction.find_by(story: @story, user: current_user)), method: :delete do %>
+          <i class="far fa-thumbs-down rating-icone"></i>
+        <% end %>
+      <% end %>
     </div>
   </div>
 
