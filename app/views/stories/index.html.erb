@@ -3,11 +3,11 @@
     <h1 class="page-title">Search</h1>
   </div>
 
-  <div class="form-group" data-controller="filter">
+  <div class="form-group mx-2 py-3" data-controller="filter">
     <%= form_tag stories_path, method: :get, remote: true, data: { filter_target: 'form', action: 'change->filter#change' } do %>
       <%= text_field_tag :query,
         params[:query],
-        class: "form-control my-2",
+        class: "form-control mb-3",
         placeholder: "What are you looking for ?" %>
       <%= render "shared/checkboxes" %>
     <% end %>
@@ -15,32 +15,29 @@
 
   <div class="content">
     <div id="list-result">
+
       <% if @searched_terms.empty? %>
-        <div class="content">
-          <div id="recommended" >
-            <h2>Recommended for you</h2>
-            <%= render "shared/carousel-story-cards", stories: @recommended_stories %>
-          </div>
+        <div id="recommended" class="content-row">
+          <h2 class="title-carousel">Recommended for you</h2>
+          <%= render "shared/carousel-story-cards", stories: @recommended_stories %>
         </div>
 
-        <div class="content">
-          <div id="best-rated" >
-            <h2>Best rated</h2>
-            <%= render "shared/carousel-story-cards", stories: @best_stories %>
-          </div>
+        <div id="best-rated" class="content-row">
+          <h2 class="title-carousel">Best rated</h2>
+          <%= render "shared/carousel-story-cards", stories: @best_stories %>
         </div>
 
       <% else %>
-        <h2>Your results</h2>
+        <h2 class="title-carousel">Your results</h2>
         <% if @searched_stories.empty? %>
-          <p> No match found </p>
+          <p class="m-3"> No match found </p>
         <% else %>
           <div id='list' class='container'>
             <%= render 'list', searched_stories: @searched_stories %>
           </div>
         <% end %>
-
       <% end %>
+
     </div>
   </div>
 
