@@ -11,27 +11,26 @@ Rails.application.routes.draw do
   end
 
   # authenticated :user do
-    root to: 'pages#home', as: "home"
+  root to: "pages#home", as: "home"
   # end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  resources :stories, only: [ :index, :show ] do
-
-    resources :favorites, only: [ :create ]
-    resources :reactions, only: [ :create, :destroy ]
-    resources :readings, only: [ :create ]
+  resources :stories, only: [:index, :show] do
+    resources :favorites, only: [:create]
+    resources :reactions, only: [:create]
+    resources :readings, only: [:create]
   end
-  resources :favorites, only: [ :destroy ]
-  resources :reactions, only: [ :update, :destroy ]
+  resources :favorites, only: [:destroy]
+  resources :reactions, only: [:destroy]
 
   resources :authors do
-    resources :favorite_authors, only: [ :create ]
+    resources :favorite_authors, only: [:create]
   end
-  resources :favorite_authors, only: [ :destroy ]
+  resources :favorite_authors, only: [:destroy]
 
-  resource :dashboard, only: [ :show ]
-  resource :profile, only: [ :show, :edit, :update ]
+  resource :dashboard, only: [:show]
+  resource :profile, only: [:show, :edit, :update]
 
-  get 'test', to: 'pages#buttplug'
+  get "test", to: "pages#buttplug"
 end

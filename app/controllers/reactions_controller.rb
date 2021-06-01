@@ -1,17 +1,17 @@
 class ReactionsController < ApplicationController
   def create
-    @reaction = Reaction.new(user: current_user, story: Story.find(params[:story_id]))
+    @reaction = current_user.reactions.find_by(story_id: params[:story_id])
+    @reaction ||= Reaction.new(user: current_user, story_id: params[:story_id])
+    @reaction.update(upvoted: params[:upvoted])
     authorize @reaction
-    # Si j'ai cliqué sur like, @reaction.upvoted = true
-    # Si j'ai cliqué sur dislike, @reaction.upvoted = false
-    # Si j'ai cliqué sur un bouton actif (si j'avais déjà cliqué sur like ou dislike)
-    # ma réaction est détruit.
-    @reaction.save
+    redirect_to story_path(params[:story_id])
   end
-
+  
   def destroy
+    raise
     @reaction = Reaction.find(params[:id])
     authorize @reaction
     @reaction.destroy
+    redirect_to story_path(params[:story_id])
   end
 end
