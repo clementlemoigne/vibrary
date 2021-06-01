@@ -12,14 +12,10 @@ bree = User.create!(age: 48, username: "BreeVDK", email: "bree.dh@gmail.com", pa
 granny = User.create!(age: 74, username: "GrannySmith", email: "aglae.sydonie@gmail.com", password: "123456", whitelist: ["Furry", "Romance", "BDSM"], blacklist: ["Public", "Horror", "Threesome"])
 brigitte = User.create!(age: 68, username: "BrigitteM", email: "brigitte.m@elysee.fr", password: "123456", whitelist: ["LGBTQ+", "Leather", "Accounting"], blacklist: ["Threesome", "Feet", "Furry"])
 nathalie = User.create!(age: 54, username: "BatNath", email: "nath.richon@gmail.com", password: "123456", whitelist: ["Romance", "Fantasy"], blacklist: ["Furry", "Accounting", "Leather"])
-mme_vibro = User.create!(age: 29, username: "Madame Vibro", email: "agathe@gmail.com", password: "123456", whitelist: ["Accounting", "BDSM", "Leather"], blacklist: ["Romance"])
+mme_vibro = User.create!(age: 29, username: "Madame Vibro", email: "agathe@gmail.com", password: "123456", whitelist: ["Accounting", "BDSM", "Leather"], blacklist: ["Furry"])
 
 # Random Users, they're just here to allow us to add reactions to our stories.
-user1 = User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty")
-user2 = User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty")
-user3 = User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty")
-user4 = User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty")
-user5 = User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty")
+# user1 = User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty")
 
 # Granny's stories are the ones recommended for latest chapters,
 # she's followed by Bree so the last three chapters she published
@@ -107,7 +103,7 @@ story_nath_3 = Story.create!(
   intensity: 4,
   reading_time: 30,
   title: "Something Gray",
-  content: "<p>'Do you like the mirror Mrs Grey?' the hoarse whisper next to my ear suggests that he too, is a fan. One arm is locked around my waist, securing me to him and the other is trailing slow, fingertip-circles over my belly, not going anywhere near where I want them to go.</p>
+  content: "'Do you like the mirror Mrs Grey?' the hoarse whisper next to my ear suggests that he too, is a fan. One arm is locked around my waist, securing me to him and the other is trailing slow, fingertip-circles over my belly, not going anywhere near where I want them to go.
 
     <p>My head rolls back onto his shoulder, my eyes almost flickering closed, lids heavy with desire, 'mmhh,' I mewl my affirmation.</p>
 
@@ -150,15 +146,17 @@ story_nath_3 = Story.create!(
     <p>I fall hard, spectacularly as the coiled tension releases like a cracked whip in a blinding shudder that’s intensified by Christian’s vicious pulsing inside me, the aftershocks of our shared orgasm prolonging my gratification. Christian pants into my neck, dropping tender, out-of-breath kisses behind my ear as we float back to our senses.</p>"
 )
 
-story_mme_vibro_1 = Story.create!(
+story_mme_vibro = Story.create!(
   author: mme_vibro,
   tags: ["BDSM", "Accounting"],
   vibration_compatibility: true,
   intensity: 5,
   reading_time: 25,
-  title: "Let's code together",
-  content: "<p>My favorite part of the day, you ask? It's right after my colleagues leave the workplace. It's like a special time where everything is suspended - and I'm alone with my computer.</p>
+  title: "Let's code together baby",
+  content: "My favorite part of the day, you ask? It's right after my colleagues leave the workplace. It's like a special time where everything is suspended - and I'm alone with my computer.
   <p>When this happens, I like to check </p>"
+)
+
 
 # Marks Granny as one of Bree's favorite authors
 fav_author_1 = FavoriteAuthor.create!(
@@ -195,53 +193,153 @@ reading_3 = Reading.create!(
 )
 
 # Reactions from the random users
-reaction_1 = Reaction.create!(
-  user: user1,
-  story: story_nath_3,
-  upvoted: true
-)
-reaction_2 = Reaction.create!(
-  user: user2,
-  story: story_nath_3,
-  upvoted: true
-)
-reaction_3 = Reaction.create!(
-  user: user3,
-  story: story_nath_3,
-  upvoted: true
-)
-reaction_4 = Reaction.create!(
-  user: user4,
-  story: story_nath_3,
-  upvoted: true
-)
-reaction_5 = Reaction.create!(
-  user: user5,
-  story: story_nath_3,
-  upvoted: false
-)
-reaction_6 = Reaction.create!(
-  user: user1,
-  story: story_nath_2,
-  upvoted: true
-)
-reaction_7 = Reaction.create!(
-  user: user2,
-  story: story_nath_2,
-  upvoted: true
-)
-reaction_8 = Reaction.create!(
-  user: user3,
-  story: story_nath_2,
-  upvoted: true
-)
-reaction_9 = Reaction.create!(
-  user: user5,
-  story: story_brigitte_2,
-  upvoted: true
-)
-reaction_10 = Reaction.create!(
-  user: user4,
-  story: story_brigitte_2,
-  upvoted: true
-)
+5.times do
+  Reaction.create!(
+    user: User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty"),
+    story: story_granny_1,
+    upvoted: true
+  )
+end
+
+7.times do
+  Reaction.create!(
+    user: User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty"),
+    story: story_granny_2,
+    upvoted: true
+  )
+end
+
+4.times do
+  Reaction.create!(
+    user: User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty"),
+    story: story_granny_3,
+    upvoted: true
+  )
+end
+
+3.times do
+  Reaction.create!(
+    user: User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty"),
+    story: story_brigitte_1,
+    upvoted: true
+  )
+end
+
+5.times do
+  Reaction.create!(
+    user: User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty"),
+    story: story_brigitte_2,
+    upvoted: true
+  )
+end
+
+3.times do
+  Reaction.create!(
+    user: User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty"),
+    story: story_brigitte_3,
+    upvoted: true
+  )
+end
+
+8.times do
+  Reaction.create!(
+    user: User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty"),
+    story: story_nath_1,
+    upvoted: true
+  )
+end
+
+10.times do
+  Reaction.create!(
+    user: User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty"),
+    story: story_nath_2,
+    upvoted: true
+  )
+end
+
+15.times do
+  Reaction.create!(
+    user: User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty"),
+    story: story_nath_3,
+    upvoted: true
+  )
+end
+
+5.times do
+  Reaction.create!(
+    user: User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty"),
+    story: story_mme_vibro,
+    upvoted: true
+  )
+end
+
+#Random readings to increase the numbers
+7.times do
+  Reading.create!(
+    user: User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty"),
+    story: story_granny_1,
+  )
+end
+
+9.times do
+  Reading.create!(
+    user: User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty"),
+    story: story_granny_2,
+  )
+end
+
+8.times do
+  Reading.create!(
+    user: User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty"),
+    story: story_granny_3,
+  )
+end
+
+9.times do
+  Reading.create!(
+    user: User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty"),
+    story: story_brigitte_1,
+  )
+end
+
+12.times do
+  Reading.create!(
+    user: User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty"),
+    story: story_brigitte_2,
+  )
+end
+
+12.times do
+  Reading.create!(
+    user: User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty"),
+    story: story_brigitte_3,
+  )
+end
+
+17.times do
+  Reading.create!(
+    user: User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty"),
+    story: story_nath_1,
+  )
+end
+
+23.times do
+  Reading.create!(
+    user: User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty"),
+    story: story_nath_2,
+  )
+end
+
+34.times do
+  Reading.create!(
+    user: User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty"),
+    story: story_nath_3,
+  )
+end
+
+5.times do
+  Reading.create!(
+    user: User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty"),
+    story: story_mme_vibro,
+  )
+end
