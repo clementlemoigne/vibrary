@@ -7,6 +7,19 @@
 
       <div class="form-inputs">
         <div class="mb-3">
+          <div class="text-black"><p>Username:</p></div>
+          <div class="d-flex box-lightblue pl-3 block-input">
+            <div><i class="fas fa-user text-white"></i></div>
+            <div class="flex-grow-1">
+              <%= f.input :username,
+                    required: true,
+                    label: false,
+                    placeholder: "username",
+                    input_html: { autocomplete: "username" } %>
+            </div>
+          </div>
+        </div>
+        <div class="mb-3">
           <div class="text-black"><p>Email Address:</p></div>
           <div class="d-flex box-lightblue pl-3 block-input">
             <div><i class="fas fa-envelope text-white"></i></div>

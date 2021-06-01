@@ -1,5 +1,21 @@
 <div class="d-flex justify-content-center align-items-center sticky-top bg-white">
-  <h1 class="page-title">Home</h1>
+  <h1 class="page-title"><%= current_user.username %></h1>
 </div>
 
-<div class="content"></div>
+<div class="content">
+  <h2 class="title-carousel">Your stories</h2>
+    <div class="container-story-cards-column col-12">
+        <% @stories.each do |story| %>
+          <%= render "shared/story-card", story: story %>
+        <% end %>
+    </div>
+</div>
+
+<%= render "shared/navbar" %>
+
+<script type="text/javascript">
+  document.querySelectorAll(".navbar-icon").forEach ((element) => {
+    element.style.opacity = 0.3;
+  });
+  document.getElementById("profile-icone").style.opacity = 1;
+</script>

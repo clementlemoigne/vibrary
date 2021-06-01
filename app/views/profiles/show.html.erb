@@ -11,7 +11,9 @@
     </div>
     <div class="logout m-3">
       <div class="m-3">
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn-pink" %>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <i class="logout-icon fas fa-sign-out-alt"></i>
+        <% end %>
       </div>
     </div>
   </div>
