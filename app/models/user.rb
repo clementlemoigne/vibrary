@@ -12,6 +12,10 @@ class User < ApplicationRecord
 
   # before_validation :reject_blank_subset_arrays
 
+  def is_favorite?(author)
+    favorite_authors.map { |fav| fav.author }.include?(author)
+  end
+
   private
 
   def reject_blank_subset_arrays
