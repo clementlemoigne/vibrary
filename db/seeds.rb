@@ -8,10 +8,11 @@ Story.destroy_all
 User.destroy_all
 
 #Bree is the reader, others are authors
-bree = User.create!(age: 48, username: "BreeVDK", email: "bree.dh@gmail.com", password: "123456", whitelist: ["Public", "Romance", "Fantasy"], blacklist: ["Furry", "Accounting", "Leather"])
+bree = User.create!(age: 48, username: "BreeVDK", email: "bree.dh@gmail.com", password: "123456", whitelist: ["Public", "Romance", "Fantasy"], blacklist: ["Furry", "Leather"])
 granny = User.create!(age: 74, username: "GrannySmith", email: "aglae.sydonie@gmail.com", password: "123456", whitelist: ["Furry", "Romance", "BDSM"], blacklist: ["Public", "Horror", "Threesome"])
 brigitte = User.create!(age: 68, username: "BrigitteM", email: "brigitte.m@elysee.fr", password: "123456", whitelist: ["LGBTQ+", "Leather", "Accounting"], blacklist: ["Threesome", "Feet", "Furry"])
 nathalie = User.create!(age: 54, username: "BatNath", email: "nath.richon@gmail.com", password: "123456", whitelist: ["Romance", "Fantasy"], blacklist: ["Furry", "Accounting", "Leather"])
+mme_vibro = User.create!(age: 29, username: "Madame Vibro", email: "agathe@gmail.com", password: "123456", whitelist: ["Accounting", "BDSM", "Leather"], blacklist: ["Romance"])
 
 # Random Users, they're just here to allow us to add reactions to our stories.
 user1 = User.create!(age: rand(18..99), username: Faker::GreekPhilosophers.name, email: Faker::Internet.email, password: "azerty")
@@ -84,7 +85,7 @@ story_nath_1 = Story.create!(
   author: nathalie,
   tags: ["Leather", "Romance"],
   vibration_compatibility: false,
-  reading_time: 90,
+  reading_time: 5,
   title: "The Six Feet Between Us",
   content: "Most nights as a child, I'd lie awake in bed staring at the ceiling and wondering if a 'tolerable' life was worth aspiring to, and if it wasn't, what was I waiting for? Perhaps, I should just cut to the chase and put myself out of my misery. Of course, I'm telling you this story, which means that I didn't, and I'm glad I persevered. But such was my life before The Middle.",
 )
@@ -92,7 +93,7 @@ story_nath_2 = Story.create!(
   author: nathalie,
   tags: ["Leather", "Romance"],
   vibration_compatibility: false,
-  reading_time: 45,
+  reading_time: 15,
   title: "S'mores Ch. 04 - Forever Please",
   content: "The way her eyes examined me, as if every detail was being recorded for future use, had my breath catching in my throat. A low growl erupted from deep within her. Her lips were on my neck then her hands grabbed my waist and lifted me on the countertop. I wrapped my legs around her hips, pulling her closer to me, falling just short of making her part of me. I was not allowing her to change her mind and leave. Our lips and tongues battled for dominance once again. My arms wrapped around her neck, tangled in her hair, my nose filled with her strawberries and cream scent.",
 )
@@ -104,50 +105,60 @@ story_nath_3 = Story.create!(
   tags: ["BDSM", "Romance"],
   vibration_compatibility: true,
   intensity: 4,
-  reading_time: 90,
+  reading_time: 30,
   title: "Something Gray",
-  content: "“Do you like the mirror Mrs Grey?” the hoarse whisper next to my ear suggests that he too, is a fan. One arm is locked around my waist, securing me to him and the other is trailing slow, fingertip-circles over my belly, not going anywhere near where I want them to go.
+  content: "<p>'Do you like the mirror Mrs Grey?' the hoarse whisper next to my ear suggests that he too, is a fan. One arm is locked around my waist, securing me to him and the other is trailing slow, fingertip-circles over my belly, not going anywhere near where I want them to go.</p>
 
-  My head rolls back onto his shoulder, my eyes almost flickering closed, lids heavy with desire, “mmhh,” I mewl my affirmation.
+    <p>My head rolls back onto his shoulder, my eyes almost flickering closed, lids heavy with desire, 'mmhh,' I mewl my affirmation.</p>
 
-  He chuckles quietly, “look at us baby,” the sharp spike of pain that connects my nipple to my sex makes my eyes fly open as Christian pinches the straining bud. I gasp and shudder embarrassingly against him.
+    <p data-vibe='1' data-intensity='0.2'>He chuckles quietly, 'look at us baby,' the sharp spike of pain that connects my nipple to my sex makes my eyes fly open as Christian pinches the straining bud. I gasp and shudder embarrassingly against him.</p>
 
-  “So eager Mrs Grey, so responsive,” he teases, “shall I make you come like this?” he’s rolling my peak between his thumb and forefinger, a leisurely squeeze and roll through the lace of the bra – just enough to drive me wild but not enough to get me off.
+    <p>'So eager Mrs Grey, so responsive,' he teases, 'shall I make you come like this?' he’s rolling my peak between his thumb and forefinger, a leisurely squeeze and roll through the lace of the bra – just enough to drive me wild but not enough to get me off.</p>
 
-  “Please,” I manage past my panting breaths. Any which way, I don’t care as long as you do!
+    <p>'Please,' I manage past my panting breaths. 'Any which way, I don’t care as long as you do!'</p>
 
-  Watching him – us is unspeakably erotic; my desire pooling, building, heaving I decide to help things along. He senses the shift in my arms that I want to slip from their hold so I can touch him but his growling order stops me, “keep still baby, if you move I stop.”
+    <p>Watching him – us is unspeakably erotic; my desire pooling, building, heaving I decide to help things along. He senses the shift in my arms that I want to slip from their hold so I can touch him but his growling order stops me, 'keep still baby, if you move I stop.'</p>
 
-  I whimper and re-join my hands behind his neck, thrusting my breasts forward.
+    <p data-vibe='1' data-intensity='0.2'>I whimper and re-join my hands behind his neck, thrusting my breasts forward.</p>
 
-  “I want you too baby, I just want to play a bit, enjoy this moment with my wife.” Instead of soothing me the way he draws out the word wife sends lashings of fire through my veins, my stomach muscles already starting to quiver in anticipation of my brewing release.
+    <p>'I want you too baby, I just want to play a bit, enjoy this moment with my wife.' Instead of soothing me the way he draws out the word wife sends lashings of fire through my veins, my stomach muscles already starting to quiver in anticipation of my brewing release.</p>
 
-  Fuck!
+    <p>Fuck!</p>
 
-  “Look at your breasts Anastasia,” he cups one breast from the bottom, holding it for our mutual appreciation.  The balcony bra retains my breasts in a perfect display, the very low cut of the demi cups only just covering my puckering areola. His voice is turning huskier, his look darker as he brushes his thumb over the dark raring point.
+    <p>'Look at your breasts Anastasia,' he cups one breast from the bottom, holding it for our mutual appreciation.  The balcony bra retains my breasts in a perfect display, the very low cut of the demi cups only just covering my puckering areola. His voice is turning huskier, his look darker as he brushes his thumb over the dark raring point.</p>
 
-  This time we gasp together, sucking in a fervent breath before Christian spins me around, crushing his mouth to mine. The harsh assault steals all reason, only awareness of blazing sensation remains; it feels like his hands are everywhere at once.
+    <p>This time we gasp together, sucking in a fervent breath before Christian spins me around, crushing his mouth to mine. The harsh assault steals all reason, only awareness of blazing sensation remains; it feels like his hands are everywhere at once.</p>
 
-  I push off his shirt and roughly undo his belt, my fingers suddenly deft in their eagerness. I slide my hands down the sides of his torso, beneath the elastic of his boxers to get rid of both undies and pants in one go. He steps out of his slacks and I grip him firmly, working my fist down the length of him. When he inhales against my vigorous attack I trace the seal of his mouth with my tongue.
+    <p>I push off his shirt and roughly undo his belt, my fingers suddenly deft in their eagerness. I slide my hands down the sides of his torso, beneath the elastic of his boxers to get rid of both undies and pants in one go. He steps out of his slacks and I grip him firmly, working my fist down the length of him. When he inhales against my vigorous attack I trace the seal of his mouth with my tongue.</p>
 
-  Bodies joined, hungry sounds escaping, he starts walking us back, up against the edge of the bed. I break away; placing both palms on his chest I push so he topples backwards onto the covers. He laughs at my audacity, the throaty rumble is a shockingly sexy sound so I follow, crawling up to straddle him.
+    <p>Bodies joined, hungry sounds escaping, he starts walking us back, up against the edge of the bed. I break away; placing both palms on his chest I push so he topples backwards onto the covers. He laughs at my audacity, the throaty rumble is a shockingly sexy sound so I follow, crawling up to straddle him.</p>
 
-  In a surprise move he sits up, holding my hips in place, “so brazen Mrs Grey but I hope you know you’re not in charge right now.” Even though his eyes are smiling they’re also scorching with his unguarded want, clearly he has a plan for our first wedded union. I pout and bat my lashes but truthfully, I’m eager to be driven to passion by his expert steering. “Turn around baby.”
+    <p data-vibe='1' data-intensity='0.2'>In a surprise move he sits up, holding my hips in place, 'so brazen Mrs Grey but I hope you know you’re not in charge right now.' Even though his eyes are smiling they’re also scorching with his unguarded want, clearly he has a plan for our first wedded union. I pout and bat my lashes but truthfully, I’m eager to be driven to passion by his expert steering. 'Turn around baby.'</p>
 
-  I swivel and sit on his lap; my legs tucked back, knees planted on either side of his thighs, facing the mirror once more. His plan is suddenly crystal clear, I’m completely open to him, legs spread wide. Like this, both of his hands are free to touch and caress wherever he wants. His erection, currently hot and rigid between the cheeks of my behind, ready to push through my wet folds and we can watch it all, together.
+    <p>I swivel and sit on his lap; my legs tucked back, knees planted on either side of his thighs, facing the mirror once more. His plan is suddenly crystal clear, I’m completely open to him, legs spread wide. Like this, both of his hands are free to touch and caress wherever he wants. His erection, currently hot and rigid between the cheeks of my behind, ready to push through my wet folds and we can watch it all, together.</p>
 
-  I’m grateful that he seems to have reached the edge of his control as he lifts my hips and brings me down, his hips shoving up to fill me with all of his hard length – finally letting me feel the delicious stretch my sex has been aching for.
+    <p data-vibe='1' data-intensity='0.2'>I’m grateful that he seems to have reached the edge of his control as he lifts my hips and brings me down, his hips shoving up to fill me with all of his hard length – finally letting me feel the delicious stretch my sex has been aching for.</p>
 
-  He grunts, his teeth bared as if in pain as he fights to hold off his release, keeping me still. I groan in pleasure, one hand finding a grip on his thigh while the other rakes through his hair.
+    <p data-vibe='1' data-intensity='0.4'>He grunts, his teeth bared as if in pain as he fights to hold off his release, keeping me still. I groan in pleasure, one hand finding a grip on his thigh while the other rakes through his hair.</p>
 
-  His hand snakes down, finding the sensitive heart in my slick mound his fingers start to circle there, the pressure perfect. “Fuck Ana, you’re so tight, so wet. Move baby, push up with your knees.” He growls though his gritted teeth as his other hand finds my breast. Pulling the bra cup down he tweaks my nipple, echoing the phenomenal pleasure down below.
+    <p data-vibe='1' data-intensity='0.6'>His hand snakes down, finding the sensitive heart in my slick mound his fingers start to circle there, the pressure perfect. 'Fuck Ana, you’re so tight, so wet. Move baby, push up with your knees.' He growls though his gritted teeth as his other hand finds my breast. Pulling the bra cup down he tweaks my nipple, echoing the phenomenal pleasure down below.</p>
 
-  I don’t need to be asked twice, flexing my quads I drive up, to his very tip before forcing myself down, finding that sensational grind and friction that starts the inevitable spiral resulting from this much stunning stimulation.
+    <p data-vibe='1' data-intensity='0.8'>I don’t need to be asked twice, flexing my quads I drive up, to his very tip before forcing myself down, finding that sensational grind and friction that starts the inevitable spiral resulting from this much stunning stimulation.</p>
 
-  Watching him touching me, filling me has us unravelling rapidly, “come baby, come now!” he demands, his clever fingers increasing their fantastic rhythm, matching the increasing speed of my strokes up and down his ever hardening shaft perfectly.
+    <p data-vibe='1' data-intensity='1.0'>Watching him touching me, filling me has us unravelling rapidly, 'come baby, come now!' he demands, his clever fingers increasing their fantastic rhythm, matching the increasing speed of my strokes up and down his ever hardening shaft perfectly.</p>
 
-  I fall hard, spectacularly as the coiled tension releases like a cracked whip in a blinding shudder that’s intensified by Christian’s vicious pulsing inside me, the aftershocks of our shared orgasm prolonging my gratification. Christian pants into my neck, dropping tender, out-of-breath kisses behind my ear as we float back to our senses."
+    <p>I fall hard, spectacularly as the coiled tension releases like a cracked whip in a blinding shudder that’s intensified by Christian’s vicious pulsing inside me, the aftershocks of our shared orgasm prolonging my gratification. Christian pants into my neck, dropping tender, out-of-breath kisses behind my ear as we float back to our senses.</p>"
 )
+
+story_mme_vibro_1 = Story.create!(
+  author: mme_vibro,
+  tags: ["BDSM", "Accounting"],
+  vibration_compatibility: true,
+  intensity: 5,
+  reading_time: 25,
+  title: "Let's code together",
+  content: "<p>My favorite part of the day, you ask? It's right after my colleagues leave the workplace. It's like a special time where everything is suspended - and I'm alone with my computer.</p>
+  <p>When this happens, I like to check </p>"
 
 # Marks Granny as one of Bree's favorite authors
 fav_author_1 = FavoriteAuthor.create!(
