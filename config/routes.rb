@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # get 'reactions/create'
+  # get 'reactions/destroy'
   # get 'profiles/show'
   # get 'profiles/edit'
   # get 'profiles/update'
@@ -17,7 +19,7 @@ Rails.application.routes.draw do
   resources :stories, only: [ :index, :show ] do
 
     resources :favorites, only: [ :create ]
-    resources :reactions, only: [ :create ]
+    resources :reactions, only: [ :create, :destroy ]
     resources :readings, only: [ :create ]
   end
   resources :favorites, only: [ :destroy ]
