@@ -15,7 +15,7 @@
         <% end %>
       <% else %>
         <%= link_to reaction_path(Reaction.find_by(story: @story, user: current_user)), method: :delete do %>
-          <i class="far fa-thumbs-up rating-icone"></i>
+          <i class="fas fa-thumbs-up rating-icone"></i>
         <% end %>
       <% end %>
 
@@ -27,7 +27,7 @@
         <% end %>
       <% else %>
         <%= link_to reaction_path(Reaction.find_by(story: @story, user: current_user)), method: :delete do %>
-          <i class="far fa-thumbs-down rating-icone"></i>
+          <i class="fas fa-thumbs-down rating-icone" style="color: #9AA5F4;"></i>
         <% end %>
       <% end %>
     </div>
