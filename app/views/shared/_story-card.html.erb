@@ -1,4 +1,4 @@
-<div class="container story-card col-9 d-flex mr-3" id="story-<%= story.id %>">
+<div class="container story-card col-9 d-flex <%= "vibrate" if story.vibration_compatibility %>" id="story-<%= story.id %>">
   <div class="story-card-row story-card-row-up">
     <% if story.user_favorite(current_user) %>
       <%= link_to favorite_path(Favorite.find_by(story: story, user: current_user)), remote: true, method: :delete do %>
@@ -20,26 +20,20 @@
 
   <div class="story-card-row story-card-row-down">
     <div class="story-card-infos">
-      <div class="d-flex justify-content-between py-3 align-items-center">
+      <div class="d-flex py-3 px-1 align-items-center">
 
-        <div class="likes d-flex">
-          <i class="info-icon far fa-thumbs-up"></i>
+        <div class="likes d-flex align-items-center" >
+          <i class="info-icon far fa-thumbs-up mr-2"></i>
           <p class="info-text"><%= story.score %></p>
         </div>
 
-        <% if story.vibration_compatibility %>
-          <div class="vibe-compatibility">
-            <i class="info-icon fas fa-broadcast-tower"></i>
-          </div>
-        <% end %>
-
-        <div class="readings d-flex">
-          <i class="info-icon fas fa-eye"></i>
+        <div class="readings d-flex align-items-center">
+          <i class="info-icon fas fa-eye mr-2"></i>
           <p class="info-text"><%= story.readings.count %></p>
         </div>
 
       </div>
-      <div class="d-flex justify-content-between">
+      <div class="d-flex">
         <% story.tags.each do |tag| %>
           <div class="tag"><%= tag %></div>
         <% end %>
