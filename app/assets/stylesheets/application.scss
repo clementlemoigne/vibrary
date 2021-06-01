@@ -13,9 +13,11 @@
 @import "components/index";
 @import "components/navbar";
 @import "components/story-card";
+@import "dashboards/show";
 @import "pages/index";
 @import "pages/test";
 @import "profiles/edit";
+@import "profiles/show";
 @import "stories/show";
 
 html {
@@ -32,7 +34,6 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-
 }
 
 .page-title {
@@ -58,9 +59,8 @@ body {
   opacity: 30%;
   height: 40px;
   width: 100%;
-  position: fixed;
-  top: 45vh;
+  position: sticky;
+  bottom: 70vh;
   right: 0px;
   z-index: -1;
 }
-

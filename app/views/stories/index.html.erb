@@ -9,20 +9,13 @@
         params[:query],
         class: "form-control my-2",
         placeholder: "What are you looking for ?" %>
-        <%= render "shared/checkboxes" %>
+      <%= render "shared/checkboxes" %>
     <% end %>
   </div>
 
   <div class="content">
     <div id="list-result">
-      <% if @searched_stories.any? %>
-        <h2>Your results</h2>
-        <div id='list'>
-          <%= render 'list', searched_stories: @searched_stories %>
-        </div>
-    </div>
-  </div>
-      <% else %>
+      <% if @searched_terms.empty? %>
         <div class="content">
           <div id="recommended" >
             <h2>Recommended for you</h2>
@@ -36,7 +29,20 @@
             <%= render "shared/carousel-story-cards", stories: @best_stories %>
           </div>
         </div>
+
+      <% else %>
+        <h2>Your results</h2>
+        <% if @searched_stories.empty? %>
+          <p> No match found </p>
+        <% else %>
+          <div id='list' class='container'>
+            <%= render 'list', searched_stories: @searched_stories %>
+          </div>
+        <% end %>
+
       <% end %>
+    </div>
+  </div>
 
 </div>
 

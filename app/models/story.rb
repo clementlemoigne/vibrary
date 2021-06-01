@@ -10,7 +10,7 @@ class Story < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :global_search,
-                  against: [:title, :tags],
+                  against: [:title, :tags, :vibration_compatibility],
                   associated_against: {
                     author: [:username]
                   },

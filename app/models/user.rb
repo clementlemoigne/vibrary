@@ -15,6 +15,18 @@ class User < ApplicationRecord
   def is_favorite?(author)
     favorite_authors.map { |fav| fav.author }.include?(author)
   end
+    
+  def upvoted?(story_id)
+    reactions.where(upvoted: true).pluck(:story_id).include?(story_id)
+  end
+
+  def downvoted?(story_id)
+    reactions.where(upvoted: false).pluck(:story_id).include?(story_id)
+  end
+
+  def voted?(story_id)
+    reactions.pluck(:story_id).include?(story_id)
+  end
 
   private
 
