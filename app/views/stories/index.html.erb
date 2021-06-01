@@ -16,7 +16,17 @@
   <div class="content">
     <div id="list-result">
 
-      <% if @searched_terms.empty? %>
+      <% if @searched_terms.any? || params[:vibration] %>
+        <h2 class="title-carousel">Your results</h2>
+        <div id='list' class='container'>
+          <%= render "list", searched_stories: @stories %>
+        </div>
+
+        <% if @stories.empty? %>
+          <p class="m-3"> No match found </p>
+        <% end %>
+
+      <% else %>
         <div id="recommended" class="content-row">
           <h2 class="title-carousel">Recommended for you</h2>
           <%= render "shared/carousel-story-cards", stories: @recommended_stories %>
@@ -26,16 +36,6 @@
           <h2 class="title-carousel">Best rated</h2>
           <%= render "shared/carousel-story-cards", stories: @best_stories %>
         </div>
-
-      <% else %>
-        <h2 class="title-carousel">Your results</h2>
-        <% if @searched_stories.empty? %>
-          <p class="m-3"> No match found </p>
-        <% else %>
-          <div id='list' class='container'>
-            <%= render 'list', searched_stories: @searched_stories %>
-          </div>
-        <% end %>
       <% end %>
 
     </div>
