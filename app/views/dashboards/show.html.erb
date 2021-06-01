@@ -1,14 +1,18 @@
 <div class="d-flex justify-content-center align-items-center sticky-top bg-white">
-  <h1 class="page-title"><%= current_user.username %></h1>
+  <h1 class="page-title"><%= current_user.username ?  current_user.username : "User" %></h1>
 </div>
 
 <div class="content">
   <h2 class="title-carousel">Your stories</h2>
-    <div class="container-story-cards-column col-12">
+    <% unless @stories.empty? %>
+      <div class="container-story-cards-column col-12">
         <% @stories.each do |story| %>
           <%= render "shared/story-card", story: story %>
         <% end %>
-    </div>
+      </div>
+    <% else %>
+      <p class="m-2">You haven't written a story yet...</p>
+    <% end %>
 </div>
 
 <%= render "shared/navbar" %>
