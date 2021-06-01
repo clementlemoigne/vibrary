@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     # For additional in app/views/devise/registrations/edit.html.erb
-    devise_parameter_sanitizer.permit(:account_update, keys: [:whitelist, :blacklist])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:whitelist, :blacklist, :username])
   end
 
   def skip_pundit?
