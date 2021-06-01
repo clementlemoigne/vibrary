@@ -7,22 +7,23 @@
   </div>
 
     <div class="container-story-to-hide">
-      <div class="container-story-infos">
-        <div class="title-favorite d-flex justify-content-between">
-          <h1><%= @author.username.capitalize %></h1>
+      <div class="container-author-infos">
+        <div class="title-author d-flex justify-content-between">
+          <h1 class="h1-author"><%= @author.username.capitalize %></h1>
           <% if @author.favorite_authors %>
             <i class="fas fa-star star-icone"></i>
           <% else %>
             <i class="far fa-star star-icone"></i>
           <% end %>
         </div>
-        <h4>Author's main tags:</h4>
+        <h4 class="h4-author">Author's main tags:</h4>
       </div>
-      <div class="d-flex justify-content-start">
+      <div class="d-flex justify-content-start tag-author">
         <% @author.stories.pluck(:tags).flatten.uniq.first(3).each do |tag| %>
           <div class="tag mr-3"><%= tag %></div>
         <% end %>
       </div>
+      <div class="author-separotor"></div>
     </div>
 
   <div class="content">
@@ -33,10 +34,7 @@
 
   <div class="content">
     <h2 class="title-carousel">Best rated stories</h2>
-    <%# <%= render "shared/carousel-story-cards", stories: @author.best_rated_stories %>
-      <%# Récuperer les stories de l'auteur
-      .map qui créé un hash dans le quel j'ai une clef score et une clef story.
-      . sort by sur le hash _by_score. %>
+    <%= render "shared/carousel-story-cards", stories: @top_stories %>
   </div>
 
 </div>

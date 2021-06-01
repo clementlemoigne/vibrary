@@ -1,3 +1,33 @@
 .star-icone {
   font-size: xx-large;
 }
+
+.title-author {
+  margin-left: 10px;
+}
+
+.tag-author {
+  margin-left: 10px;
+}
+
+.h1-author{
+  font-size: xx-large;
+  width: 80%;
+}
+
+.h4-author {
+  margin-left: 10px;
+  font-size: large;
+}
+
+.container-author-infos {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-separotor {
+  border-bottom: 0.5mm solid #edc1dc;
+  margin-top: 16px;
+  margin-left: 10px;
+}
+
