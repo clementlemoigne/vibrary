@@ -1,7 +1,8 @@
 class StoryPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all.reject{ |story| story.tags.any?{ |tag| user.blacklist.include?(tag)}}
+      stories = scope.all.reject { |story| story.tags.any? { |tag| user.blacklist.include?(tag) } }
+      Story.where(id: stories.map(&:id))
     end
   end
 
