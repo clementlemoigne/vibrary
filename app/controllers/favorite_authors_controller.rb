@@ -8,6 +8,9 @@ class FavoriteAuthorsController < ApplicationController
   end
 
   def destroy
-
+    @favorite_author = FavoriteAuthor.find(params[:id])
+    authorize @favorite_author
+    @favorite_author.destroy
+    redirect_to request.referrer
   end
 end
