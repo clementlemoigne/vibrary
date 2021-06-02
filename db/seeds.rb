@@ -64,7 +64,7 @@ story_brigitte_1 = Story.create!(
 story_brigitte_2 = Story.create!(
   author: brigitte,
   tags: ["Public", "LGBTQ+"],
-  vibration_compatibility: false,
+  vibration_compatibility: true,
   reading_time: 35,
   title: "Western Skies Ch. 04",
   content: "Disjointed, malformed visions raced through my head. Unbidden dreams came to me as my subconscious mind sifted though its memory vault, trying to make sense of the last few weeks. First came fragments of my new life in Montana; images paraded haphazardly beneath my eyelids, clear as daylight but just out of reach. I was driving the splendid Beartooth Highway with my dad, the day before I moved into the dorm...then it was my first day at school...and then Luke looking at me over his shoulder, blushing...",
@@ -80,7 +80,7 @@ story_brigitte_3 = Story.create!(
 story_nath_1 = Story.create!(
   author: nathalie,
   tags: ["Leather", "Romance"],
-  vibration_compatibility: false,
+  vibration_compatibility: true,
   reading_time: 5,
   title: "The Six Feet Between Us",
   content: "Most nights as a child, I'd lie awake in bed staring at the ceiling and wondering if a 'tolerable' life was worth aspiring to, and if it wasn't, what was I waiting for? Perhaps, I should just cut to the chase and put myself out of my misery. Of course, I'm telling you this story, which means that I didn't, and I'm glad I persevered. But such was my life before The Middle.",
