@@ -7,10 +7,10 @@
   <%= simple_form_for @profile, url: profile_path, method: :patch do |f| %>
     <div class="container-lists form d-flex justify-content-center">
       <div class="lists m-3">
-        <%= f.input :whitelist, as: :check_boxes, collection: Story::TAGS.each %>
+        <%= f.input :whitelist, input_html: { class: "my-checkboxes" }, as: :check_boxes, collection: Story::TAGS.each %>
       </div>
       <div class="lists m-3">
-        <%= f.input :blacklist, as: :check_boxes, collection: Story::TAGS.each %>
+        <%= f.input :blacklist, input_html: { class: "my-checkboxes" }, as: :check_boxes, collection: Story::TAGS.each %>
       </div>
     </div>
     <div class="d-flex align-items-center flex-column">
