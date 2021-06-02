@@ -1,13 +1,13 @@
-<div id="linkable-div" class="container story-card col-9 d-flex <%= "vibrate" if story.vibration_compatibility %>" id="story-<%= story.id %>" >
+<div class="container story-card col-9 d-flex <%= "vibrate" if story.vibration_compatibility %>" id="<%= story.id %>">
   <div class="story-card-row story-card-row-up">
     <% if story.user_favorite(current_user) %>
-      <%= link_to favorite_path(Favorite.find_by(story: story, user: current_user)), remote: true, method: :delete do %>
+      <span data-story-id="<%= "#{story.id}" %>" data-id="<%= "#{Favorite.find_by(story: story, user: current_user).id}" %>" class="bookmark">
         <i class="story-card-icone fas fa-bookmark"></i>
-      <% end %>
+      </span>
     <% else %>
-      <%= link_to story_favorites_path(story), remote: true, method: :post  do %>
+      <span data-story-id="<%= "#{story.id}" %>" class="bookmark">
         <i class="story-card-icone far fa-bookmark"></i>
-      <% end %>
+      </span>
     <% end %>
 
 

@@ -3,25 +3,43 @@ class FavoritesController < ApplicationController
   def create
     @favorite = Favorite.new(user: current_user, story: Story.find(params[:story_id]))
     authorize @favorite
-    @favorite.save
-    redirect_to request.referrer
-    # if params["location"]
-    #   redirect_to story_path(Story.find(params[:story_id]))
-    # else
-    #  redirect_to landing_path(anchor: "story-#{params[:story_id]}")
-    # end
+    if @favorite.save
+      respond_to do |format|
+        format.html { redirect_to request.referrer }
+        format.json { render json: {
+          id: @favorite.id
+        }}
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to request.referrer }
+        format.json { render json: {
+          create: 'false'
+        }}
+      end
+    end
+
+    # redirect_to request.referrer
   end
 
   def destroy
-    # raises
     @favorite = Favorite.find(params[:id])
     authorize @favorite
-    @favorite.destroy
-    redirect_to request.referrer
-  #   if params["location"]
-  #     redirect_to story_path(Story.find(@favorite.story.id))
-  #  else
-  #   redirect_to landing_path
-  #  end
+    if @favorite.destroy
+      respond_to do |format|
+        format.html { redirect_to request.referrer }
+        format.json { render json: {
+          destroy: 'true'
+        }}
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to request.referrer }
+        format.json { render json: {
+          destroy: 'false'
+        }}
+      end
+    end
   end
+
 end
