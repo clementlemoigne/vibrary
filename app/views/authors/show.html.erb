@@ -13,13 +13,13 @@
           <% unless current_user == @author %>
             <% if @current_user.is_favorite?(@author) %>
               <%= link_to favorite_author_path(FavoriteAuthor.find_by(author_id: params[:id])), method: :delete do %>
-              <%# <%= link_to favorite_path(Favorite.find_by(story: story, user: current_user)), remote: true, method: :delete do %>
+              <%#= link_to favorite_path(Favorite.find_by(story: story, user: current_user)), remote: true, method: :delete do %>
                 <i class="fas fa-star star-icone"></i>
               <% end %>
             <% else %>
-                <%= link_to author_favorite_authors_path(@author), method: :post  do %>
-                  <i class="far fa-star star-icone"></i>
-                <% end %>
+              <%= link_to author_favorite_authors_path(@author), method: :post  do %>
+                <i class="far fa-star star-icone"></i>
+              <% end %>
             <% end %>
           <% end %>
         </div>
@@ -33,20 +33,17 @@
       <div class="author-separotor"></div>
     </div>
 
-  <div class="content">
+  <div class="content p-0">
   <div id="readings" class="content-row">
     <h2 class="title-carousel">Latest stories</h2>
     <%= render "shared/carousel-story-cards", stories: @author.stories.sort_by(&:updated_at).reverse!.take(3) %>
   </div>
 
-  <div class="content">
+  <div class="content p-0">
     <h2 class="title-carousel">Best rated stories</h2>
     <%= render "shared/carousel-story-cards", stories: @top_stories %>
   </div>
 
 </div>
-
-<%= render "shared/navbar" %>
-
 
 
