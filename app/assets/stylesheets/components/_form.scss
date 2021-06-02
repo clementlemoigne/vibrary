@@ -1,9 +1,11 @@
 .form-group {
   margin-bottom: 0;
 
-  > label {
-    color: $black;
-  }
+}
+
+.form-group label {
+  color: $black;
+  padding: 8px;
 }
 
 .block-input {
@@ -12,6 +14,7 @@
 }
 
 input.form-control {
+  border-color: $dark-rose;
   background-color: white;
   &:focus {
     background-color: white;

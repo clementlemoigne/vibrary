@@ -9,13 +9,13 @@ module StoriesConcern
   end
 
   def searched_stories
-    @searched_terms = [params[:query], params[:tag], params[:vibration]].flatten.reject(&:blank?)
-    @searched_stories = Story.global_search(@searched_terms)
-    @searched_stories = policy_scope(@searched_stories)
-    # if params[:vibration] == "on"
-    #   @searched_stories = @searched_stories.filter { |story| story.vibration_compatibility }
-    # else
-    #   @searched_stories
-    # end
+    @stories = policy_scope(Story)
+
+    @searched_terms = [params[:tag]].flatten.reject(&:blank?)
+    @searched_terms << params[:query] if params[:query].present?
+
+    @stories = @stories.global_search(@searched_terms) if @searched_terms.any?
+
+    @stories = @stories.where(vibration_compatibility: true) if params[:vibration]
   end
 end
