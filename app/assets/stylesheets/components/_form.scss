@@ -15,8 +15,8 @@
 
 input.form-control {
   border-color: $dark-rose;
-  background-color: white;
+  background-color: $light-blue;
   &:focus {
-    background-color: white;
+    background-color: $light-blue;
   }
 }
