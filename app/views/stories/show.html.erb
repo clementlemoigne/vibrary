@@ -65,7 +65,7 @@
     <%= @story.content.html_safe %>
 
     <br>
-    <br>
+    <a href='#' id="top" class="btn btn-pink">Back to top</a>
     <br>
     <br>
     <br>
@@ -83,10 +83,18 @@
     <br>
 
   </div>
-
   <%= render "shared/vibrating-zone" %>
 
 </div>
 
 <script type="text/javascript">
+  //const backToTop = getElementById("top");
+  //const rootElement = document.documentElement;
+  //function scrollToTop() {
+   // rootElement.scrollTo({
+     // top: 0,
+     // behavior: "smooth"
+   // });
+  //}
+  //backToTop.addEventListener("click", scrollToTop)
 </script>

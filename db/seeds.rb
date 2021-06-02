@@ -121,18 +121,6 @@ story_nath_3 = Story.create!(
 
     <p data-vibe='1' data-intensity='1.0'>Fuck!</p>
 
-    <p data-vibe='1' data-intensity='0.1'>'Look at your breasts Anastasia,' he cups one breast from the bottom, holding it for our mutual appreciation.  The balcony bra retains my breasts in a perfect display, the very low cut of the demi cups only just covering my puckering areola. His voice is turning huskier, his look darker as he brushes his thumb over the dark raring point.</p>
-
-    <p data-vibe='1' data-intensity='0.2'>This time we gasp together, sucking in a fervent breath before Christian spins me around, crushing his mouth to mine. The harsh assault steals all reason, only awareness of blazing sensation remains; it feels like his hands are everywhere at once.</p>
-
-    <p data-vibe='1' data-intensity='0.5'>I push off his shirt and roughly undo his belt, my fingers suddenly deft in their eagerness. I slide my hands down the sides of his torso, beneath the elastic of his boxers to get rid of both undies and pants in one go. He steps out of his slacks and I grip him firmly, working my fist down the length of him. When he inhales against my vigorous attack I trace the seal of his mouth with my tongue.</p>
-
-    <p data-vibe='1' data-intensity='0.2'>Bodies joined, hungry sounds escaping, he starts walking us back, up against the edge of the bed. I break away; placing both palms on his chest I push so he topples backwards onto the covers. He laughs at my audacity, the throaty rumble is a shockingly sexy sound so I follow, crawling up to straddle him.</p>
-
-    <p data-vibe='1' data-intensity='0.5'>In a surprise move he sits up, holding my hips in place, 'so brazen Mrs Grey but I hope you know you’re not in charge right now.' Even though his eyes are smiling they’re also scorching with his unguarded want, clearly he has a plan for our first wedded union. I pout and bat my lashes but truthfully, I’m eager to be driven to passion by his expert steering. 'Turn around baby.'</p>
-
-    <p>I swivel and sit on his lap; my legs tucked back, knees planted on either side of his thighs, facing the mirror once more. His plan is suddenly crystal clear, I’m completely open to him, legs spread wide. Like this, both of his hands are free to touch and caress wherever he wants. His erection, currently hot and rigid between the cheeks of my behind, ready to push through my wet folds and we can watch it all, together.</p>
-
     <p data-vibe='1' data-intensity='0.2'>I’m grateful that he seems to have reached the edge of his control as he lifts my hips and brings me down, his hips shoving up to fill me with all of his hard length – finally letting me feel the delicious stretch my sex has been aching for.</p>
 
     <p data-vibe='1' data-intensity='0.4'>He grunts, his teeth bared as if in pain as he fights to hold off his release, keeping me still. I groan in pleasure, one hand finding a grip on his thigh while the other rakes through his hair.</p>
