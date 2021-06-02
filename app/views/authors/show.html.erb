@@ -10,15 +10,17 @@
       <div class="container-author-infos">
         <div class="title-author d-flex justify-content-between">
           <h1 class="h1-author"><%= @author.username %></h1>
-          <% if @current_user.is_favorite?(@author) %>
-            <%= link_to favorite_author_path(FavoriteAuthor.find_by(author_id: params[:id])), method: :delete do %>
-            <%# <%= link_to favorite_path(Favorite.find_by(story: story, user: current_user)), remote: true, method: :delete do %>
-              <i class="fas fa-star star-icone"></i>
-            <% end %>
-          <% else %>
+          <% unless current_user == @author %>
+            <% if @current_user.is_favorite?(@author) %>
+              <%= link_to favorite_author_path(FavoriteAuthor.find_by(author_id: params[:id])), method: :delete do %>
+              <%#= link_to favorite_path(Favorite.find_by(story: story, user: current_user)), remote: true, method: :delete do %>
+                <i class="fas fa-star star-icone"></i>
+              <% end %>
+            <% else %>
               <%= link_to author_favorite_authors_path(@author), method: :post  do %>
                 <i class="far fa-star star-icone"></i>
               <% end %>
+            <% end %>
           <% end %>
         </div>
         <h4 class="h4-author">Author's main tags:</h4>

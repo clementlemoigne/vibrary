@@ -13,9 +13,11 @@
 
     <h1><%= link_to story.title.capitalize, story_path(story) %></h1>
     <h4>By <%= link_to "#{story.author.username}", author_path(story.author) %></h4>
-    <div class="story-card-text">
-      <p class="story-card-p"><%= story.content %></p>
-    </div>
+      <div class="story-card-text">
+        <%= link_to story_path(story) do %>
+          <p class="story-card-p"><%= story.content %></p>
+        <% end %>
+      </div>
   </div>
 
   <div class="story-card-row story-card-row-down">
@@ -24,7 +26,7 @@
 
         <div class="likes d-flex align-items-center" >
           <i class="info-icon far fa-thumbs-up"></i>
-          <p class="info-text p-0"><%= story.score %></p>
+          <p class="info-text"><%= story.score %></p>
         </div>
 
         <div class="readings d-flex">
@@ -32,6 +34,12 @@
           <p class="info-text"><%= story.readings.count %></p>
         </div>
 
+        <% if story.vibration_compatibility %>
+          <div class="readings d-flex px-3">
+            <%= image_tag('vibration.svg', size: "40x24") %>
+          </div>
+        <% end %>
+        
       </div>
       <div class="d-flex">
         <% story.tags.each do |tag| %>
@@ -41,3 +49,12 @@
     </div>
   </div>
 </div>
+
+
+<%# <script lang="javascript">
+  const linkableCard = document.getElementById('linkable-div');
+  element.addEventListener(eventType, (event) => {
+  // Do something (callback)
+  });
+</script> %>
+

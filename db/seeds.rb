@@ -64,7 +64,7 @@ story_brigitte_1 = Story.create!(
 story_brigitte_2 = Story.create!(
   author: brigitte,
   tags: ["Public", "LGBTQ+"],
-  vibration_compatibility: false,
+  vibration_compatibility: true,
   reading_time: 35,
   title: "Western Skies Ch. 04",
   content: "Disjointed, malformed visions raced through my head. Unbidden dreams came to me as my subconscious mind sifted though its memory vault, trying to make sense of the last few weeks. First came fragments of my new life in Montana; images paraded haphazardly beneath my eyelids, clear as daylight but just out of reach. I was driving the splendid Beartooth Highway with my dad, the day before I moved into the dorm...then it was my first day at school...and then Luke looking at me over his shoulder, blushing...",
@@ -80,7 +80,7 @@ story_brigitte_3 = Story.create!(
 story_nath_1 = Story.create!(
   author: nathalie,
   tags: ["Leather", "Romance"],
-  vibration_compatibility: false,
+  vibration_compatibility: true,
   reading_time: 5,
   title: "The Six Feet Between Us",
   content: "Most nights as a child, I'd lie awake in bed staring at the ceiling and wondering if a 'tolerable' life was worth aspiring to, and if it wasn't, what was I waiting for? Perhaps, I should just cut to the chase and put myself out of my misery. Of course, I'm telling you this story, which means that I didn't, and I'm glad I persevered. But such was my life before The Middle.",
@@ -109,27 +109,27 @@ story_nath_3 = Story.create!(
 
     <p data-vibe='1' data-intensity='0.2'>He chuckles quietly, 'look at us baby,' the sharp spike of pain that connects my nipple to my sex makes my eyes fly open as Christian pinches the straining bud. I gasp and shudder embarrassingly against him.</p>
 
-    <p>'So eager Mrs Grey, so responsive,' he teases, 'shall I make you come like this?' he’s rolling my peak between his thumb and forefinger, a leisurely squeeze and roll through the lace of the bra – just enough to drive me wild but not enough to get me off.</p>
+    <p data-vibe='1' data-intensity='0.3'>'So eager Mrs Grey, so responsive,' he teases, 'shall I make you come like this?' he’s rolling my peak between his thumb and forefinger, a leisurely squeeze and roll through the lace of the bra – just enough to drive me wild but not enough to get me off.</p>
 
-    <p>'Please,' I manage past my panting breaths. 'Any which way, I don’t care as long as you do!'</p>
+    <p data-vibe='1' data-intensity='0.4'>'Please,' I manage past my panting breaths. 'Any which way, I don’t care as long as you do!'</p>
 
-    <p>Watching him – us is unspeakably erotic; my desire pooling, building, heaving I decide to help things along. He senses the shift in my arms that I want to slip from their hold so I can touch him but his growling order stops me, 'keep still baby, if you move I stop.'</p>
+    <p data-vibe='1' data-intensity='0.5'>Watching him – us is unspeakably erotic; my desire pooling, building, heaving I decide to help things along. He senses the shift in my arms that I want to slip from their hold so I can touch him but his growling order stops me, 'keep still baby, if you move I stop.'</p>
 
-    <p data-vibe='1' data-intensity='0.2'>I whimper and re-join my hands behind his neck, thrusting my breasts forward.</p>
+    <p data-vibe='1' data-intensity='0.3'>I whimper and re-join my hands behind his neck, thrusting my breasts forward.</p>
 
     <p>'I want you too baby, I just want to play a bit, enjoy this moment with my wife.' Instead of soothing me the way he draws out the word wife sends lashings of fire through my veins, my stomach muscles already starting to quiver in anticipation of my brewing release.</p>
 
-    <p>Fuck!</p>
+    <p data-vibe='1' data-intensity='1.0'>Fuck!</p>
 
-    <p>'Look at your breasts Anastasia,' he cups one breast from the bottom, holding it for our mutual appreciation.  The balcony bra retains my breasts in a perfect display, the very low cut of the demi cups only just covering my puckering areola. His voice is turning huskier, his look darker as he brushes his thumb over the dark raring point.</p>
+    <p data-vibe='1' data-intensity='0.1'>'Look at your breasts Anastasia,' he cups one breast from the bottom, holding it for our mutual appreciation.  The balcony bra retains my breasts in a perfect display, the very low cut of the demi cups only just covering my puckering areola. His voice is turning huskier, his look darker as he brushes his thumb over the dark raring point.</p>
 
-    <p>This time we gasp together, sucking in a fervent breath before Christian spins me around, crushing his mouth to mine. The harsh assault steals all reason, only awareness of blazing sensation remains; it feels like his hands are everywhere at once.</p>
+    <p data-vibe='1' data-intensity='0.2'>This time we gasp together, sucking in a fervent breath before Christian spins me around, crushing his mouth to mine. The harsh assault steals all reason, only awareness of blazing sensation remains; it feels like his hands are everywhere at once.</p>
 
-    <p>I push off his shirt and roughly undo his belt, my fingers suddenly deft in their eagerness. I slide my hands down the sides of his torso, beneath the elastic of his boxers to get rid of both undies and pants in one go. He steps out of his slacks and I grip him firmly, working my fist down the length of him. When he inhales against my vigorous attack I trace the seal of his mouth with my tongue.</p>
+    <p data-vibe='1' data-intensity='0.5'>I push off his shirt and roughly undo his belt, my fingers suddenly deft in their eagerness. I slide my hands down the sides of his torso, beneath the elastic of his boxers to get rid of both undies and pants in one go. He steps out of his slacks and I grip him firmly, working my fist down the length of him. When he inhales against my vigorous attack I trace the seal of his mouth with my tongue.</p>
 
-    <p>Bodies joined, hungry sounds escaping, he starts walking us back, up against the edge of the bed. I break away; placing both palms on his chest I push so he topples backwards onto the covers. He laughs at my audacity, the throaty rumble is a shockingly sexy sound so I follow, crawling up to straddle him.</p>
+    <p data-vibe='1' data-intensity='0.2'>Bodies joined, hungry sounds escaping, he starts walking us back, up against the edge of the bed. I break away; placing both palms on his chest I push so he topples backwards onto the covers. He laughs at my audacity, the throaty rumble is a shockingly sexy sound so I follow, crawling up to straddle him.</p>
 
-    <p data-vibe='1' data-intensity='0.2'>In a surprise move he sits up, holding my hips in place, 'so brazen Mrs Grey but I hope you know you’re not in charge right now.' Even though his eyes are smiling they’re also scorching with his unguarded want, clearly he has a plan for our first wedded union. I pout and bat my lashes but truthfully, I’m eager to be driven to passion by his expert steering. 'Turn around baby.'</p>
+    <p data-vibe='1' data-intensity='0.5'>In a surprise move he sits up, holding my hips in place, 'so brazen Mrs Grey but I hope you know you’re not in charge right now.' Even though his eyes are smiling they’re also scorching with his unguarded want, clearly he has a plan for our first wedded union. I pout and bat my lashes but truthfully, I’m eager to be driven to passion by his expert steering. 'Turn around baby.'</p>
 
     <p>I swivel and sit on his lap; my legs tucked back, knees planted on either side of his thighs, facing the mirror once more. His plan is suddenly crystal clear, I’m completely open to him, legs spread wide. Like this, both of his hands are free to touch and caress wherever he wants. His erection, currently hot and rigid between the cheeks of my behind, ready to push through my wet folds and we can watch it all, together.</p>
 
