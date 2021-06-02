@@ -9,7 +9,7 @@
     <div class="container-story-to-hide">
       <div class="container-author-infos">
         <div class="title-author d-flex justify-content-between">
-          <h1 class="h1-author"><%= @author.username.capitalize %></h1>
+          <h1 class="h1-author"><%= @author.username %></h1>
           <% if @current_user.is_favorite?(@author) %>
             <%= link_to favorite_author_path(FavoriteAuthor.find_by(author_id: params[:id])), method: :delete do %>
             <%# <%= link_to favorite_path(Favorite.find_by(story: story, user: current_user)), remote: true, method: :delete do %>
@@ -31,20 +31,17 @@
       <div class="author-separotor"></div>
     </div>
 
-  <div class="content">
+  <div class="content p-0">
   <div id="readings" class="content-row">
     <h2 class="title-carousel">Latest stories</h2>
     <%= render "shared/carousel-story-cards", stories: @author.stories.sort_by(&:updated_at).reverse!.take(3) %>
   </div>
 
-  <div class="content">
+  <div class="content p-0">
     <h2 class="title-carousel">Best rated stories</h2>
     <%= render "shared/carousel-story-cards", stories: @top_stories %>
   </div>
 
 </div>
-
-<%= render "shared/navbar" %>
-
 
 
