@@ -11,11 +11,11 @@
 
       <% if current_user.downvoted?(@story.id) || !current_user.voted?(@story.id) %>
         <%= link_to story_reactions_path(@story, params: { upvoted: true }), method: :post do %>
-          <i class="far fa-thumbs-up rating-icone"></i>
+          <i class="far fa-thumbs-up rating-icone pb-2"></i>
         <% end %>
       <% else %>
         <%= link_to reaction_path(Reaction.find_by(story: @story, user: current_user)), method: :delete do %>
-          <i class="fas fa-thumbs-up rating-icone"></i>
+          <i class="fas fa-thumbs-up rating-icone pb-2" style="color: #e276b9"></i>
         <% end %>
       <% end %>
 
@@ -23,11 +23,11 @@
 
       <% if current_user.upvoted?(@story.id) || !current_user.voted?(@story.id) %>
         <%= link_to story_reactions_path(@story, params: { upvoted: false }), method: :post do %>
-          <i class="far fa-thumbs-down rating-icone"></i>
+          <i class="far fa-thumbs-down rating-icone pt-1"></i>
         <% end %>
       <% else %>
         <%= link_to reaction_path(Reaction.find_by(story: @story, user: current_user)), method: :delete do %>
-          <i class="fas fa-thumbs-down rating-icone" style="color: #9AA5F4;"></i>
+          <i class="fas fa-thumbs-down rating-icone pt-1" style="color: #e276b9"></i>
         <% end %>
       <% end %>
     </div>

@@ -2,8 +2,6 @@
   padding: 24px 12px;
 }
 
-
-
 .container-story-up {
   height: 10vh;
   position: sticky;
@@ -19,16 +17,9 @@
     justify-content: space-around;
   }
 
-  // .btn-pink {
-  //   background-color: $dark-rose;
-  //   color: white;
-  //   padding: 6px 18px;
-  //   margin-left: 16px;
-  //   border-radius: 50px;
-  // }
-
   .rating-icone {
     font-size: x-large;
+    color:#b1b1b1;
   }
 }
 
@@ -146,22 +137,12 @@ input:checked + .sliding {
 }
 
 .info-text {
-  padding-left: 10px;
-  padding-right: 10px;
+  width: 30px;
   font-weight: bold;
-  color: $dark-rose;
+  color: #b1b1b1;
   margin: 0;
   text-align: center;
   min-width: 30px;
   height: 24px;
 }
-// .vibrating-zone {
-//   background-color: $rose;
-//   opacity: 30%;
-//   height: 160px;
-//   width: 100%;
-//   position: sticky;
-//   top: 45vh;
-//   z-index: -1;
-// }
 
