@@ -24,3 +24,15 @@
   margin-left: 16px;
   border-radius: 50px;
 }
+
+.btn-white-outline {
+  border-color: $blue;
+  border-style: dashed;
+  background-color: white;
+  color: $blue;;
+  border-radius: 50px;
+  margin-top: 60px;
+  padding: 6px 18px;
+  font-weight: 700;
+  // font-size: ;
+}
