@@ -8,7 +8,7 @@
   background-color: #F9F1FB;
   border: #6A3EAF;
   border-radius: 50rem;
-  font-weight: normal;
+  font-weight: 600;
   font-size: small;
   margin-right: 0.6rem;
   margin-bottom: 0.4rem;
@@ -17,9 +17,9 @@
 
 .my-checkboxes + label {
   cursor: pointer;
-  background-color: #F9F1FB;
+  background-color: $pale-rose;
   border-radius: 50rem;
-  font-weight: normal;
+  font-weight: 600;
   font-size: small;
   margin-right: 0.6rem;
   margin-bottom: 0.4rem;
@@ -28,9 +28,9 @@
 
 .my-checkboxes:checked + label {
   cursor: pointer;
-  background-color: #edc1dc;
+  background-color: $dark-rose;
   border-radius: 50rem;
-  font-weight: normal;
+  font-weight: 600;
   font-size: small;
   margin-right: 0.6rem;
   margin-bottom: 0.4rem;
