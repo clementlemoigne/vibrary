@@ -35,7 +35,9 @@ document.addEventListener('turbolinks:load', () => {
   initButtplug();
   // toggleVibration();
   toggleBookmark();
+  toggleFavoriteAuthor();
 });
 
 import "controllers"
+import { toggleFavoriteAuthor } from "../components/toggle-favorite-author";
 

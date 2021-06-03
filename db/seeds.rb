@@ -103,9 +103,7 @@ story_nath_3 = Story.create!(
   intensity: 4,
   reading_time: 30,
   title: "Something Gray",
-  content: "'Do you like the mirror Mrs Grey?' the hoarse whisper next to my ear suggests that he too, is a fan. One arm is locked around my waist, securing me to him and the other is trailing slow, fingertip-circles over my belly, not going anywhere near where I want them to go.
-
-    <p>My head rolls back onto his shoulder, my eyes almost flickering closed, lids heavy with desire, 'mmhh,' I mewl my affirmation.</p>
+  content: "One arm is locked around my waist, fingertip-circles over my belly, not going anywhere near where I want them to go.
 
     <p data-vibe='1' data-intensity='0.2'>He chuckles quietly, 'look at us baby,' the sharp spike of pain that connects my nipple to my sex makes my eyes fly open as Christian pinches the straining bud. I gasp and shudder embarrassingly against him.</p>
 
@@ -141,8 +139,7 @@ story_mme_vibro = Story.create!(
   intensity: 5,
   reading_time: 25,
   title: "Let's code together baby",
-  content: "My favorite part of the day, you ask? It's right after my colleagues leave the workplace. It's like a special time where everything is suspended - and I'm alone with my computer.
-  <p>When this happens, I like to check </p>"
+  content: "My favorite part of the day, you ask? It's right after my colleagues leave the workplace. It's like a special time where everything is suspended - and I'm alone with my computer. When this happens, I like to check"
 )
 
 

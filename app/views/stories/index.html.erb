@@ -7,7 +7,7 @@
     <%= form_tag stories_path, method: :get, remote: true, data: { filter_target: 'form', action: 'change->filter#change' } do %>
       <%= text_field_tag :query,
         params[:query],
-        class: "form-control mb-3",
+        class: "form-control mb-3 search-bar",
         placeholder: "What are you looking for ?" %>
       <%= render "shared/checkboxes" %>
     <% end %>
