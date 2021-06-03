@@ -31,9 +31,9 @@ const toggleFavoriteAuthor = () => {
             })
             .then(response => response.json())
             .then((data) => {
-              console.log(data.id);
+              // console.log(data.id);
               const favoriteAuthorToChange = document.querySelector(`[data-author-id="${favoriteAuthor.dataset.authorId}"]`);
-              console.log(favoriteAuthorToChange);
+              // console.log(favoriteAuthorToChange);
 
               favoriteAuthorToChange.dataset.id = data.id;
               const iToChange = favoriteAuthorToChange.firstElementChild;
