@@ -62,7 +62,7 @@
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-    font-weight: 200;
+    font-weight: 400; // 200 to 400
     overflow: hidden;
     text-decoration: none;
   }
@@ -107,7 +107,7 @@
 }
 
 .tag {
-  background-color: #d8dcf5;
+  background-color: #a2aefc;
   padding: 2px 8px;
   border-radius: 16px;
   color: white;
@@ -133,7 +133,7 @@
   animation-duration: 120ms;
   animation-iteration-count: 2;
   animation-timing-function: ease-out;
-  border-color: $blue;
+  border-color: #a2aefc;
   border-style: dashed;
 }
 
