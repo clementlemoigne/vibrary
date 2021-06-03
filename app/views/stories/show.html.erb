@@ -23,7 +23,7 @@
 
       <% if current_user.upvoted?(@story.id) || !current_user.voted?(@story.id) %>
         <%= link_to story_reactions_path(@story, params: { upvoted: false }), method: :post do %>
-          <i class="far fa-thumbs-down rating-icone" style="color: #9AA5F4;"></i>
+          <i class="far fa-thumbs-down rating-icone"></i>
         <% end %>
       <% else %>
         <%= link_to reaction_path(Reaction.find_by(story: @story, user: current_user)), method: :delete do %>
@@ -37,15 +37,17 @@
     <div class="container-story-infos">
       <div class="title-favorite d-flex justify-content-between">
         <h1><%= @story.title.capitalize %></h1>
+
         <% if @story.user_favorite(current_user) %>
-          <%= link_to favorite_path(Favorite.find_by(story: @story, user: current_user), location: 'show'), class: "bookmark-plain", method: :delete do %>
-            <i class="fa fa-bookmark bookmark-icone" style="color: #9AA5F4;"></i>
-          <% end %>
+          <span data-story-id="<%= "#{@story.id}" %>" data-id="<%= "#{Favorite.find_by(story: @story, user: current_user).id}" %>" class="bookmark">
+            <i class="fa fa-bookmark bookmark-icone"></i>
+          </span>
         <% else %>
-          <%= link_to story_favorites_path(@story, location: 'show'), class: "bookmark-empty", method: :post do %>
-            <i class="far fa-bookmark bookmark-icone" style="color: #9AA5F4;"></i>
-          <% end %>
+          <span data-story-id="<%= "#{@story.id}" %>" class="bookmark">
+            <i class="far fa-bookmark bookmark-icone"></i>
+          </span>
         <% end %>
+
       </div>
       <h4>By <%= link_to "#{@story.author.username}", author_path(Story.find(params[:id]).author) %></h4>
       <div class="d-flex justify-content-start">
@@ -66,11 +68,6 @@
 
     <br>
     <a href='#' id="top" class="btn btn-pink">Back to top</a>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
     <br>
     <br>
     <br>

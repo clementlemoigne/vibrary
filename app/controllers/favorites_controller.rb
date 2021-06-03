@@ -18,8 +18,6 @@ class FavoritesController < ApplicationController
         }}
       end
     end
-
-    # redirect_to request.referrer
   end
 
   def destroy

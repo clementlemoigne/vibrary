@@ -12,9 +12,15 @@ const toggleBookmark = () => {
           headers: { 'Accept': "application/json", 'X-CSRF-Token': csrfToken() }
         })
         .then(response => response.json())
-        .then((x) => {
-          bookmark.removeAttribute('data-id');
-          bookmark.innerHTML = '<i class="story-card-icone far fa-bookmark "></i>';
+        .then(() => {
+          const bookmarksToChange = document.querySelectorAll(`[data-story-id="${bookmark.dataset.storyId}"]`);
+          bookmarksToChange.forEach((bookmarkToChange) => {
+            bookmarkToChange.removeAttribute('data-id');
+            const iToChange = bookmarkToChange.firstElementChild;
+            iToChange.classList.remove("fas");
+            iToChange.classList.add("far");
+            // bookmarkToChange.innerHTML = '<i class="story-card-icone far fa-bookmark "></i>';
+          });
         })
       }
       else {
@@ -25,8 +31,14 @@ const toggleBookmark = () => {
         .then(response => response.json())
         .then((data) => {
           console.log(data.id);
-          bookmark.dataset.id = data.id;
-          bookmark.innerHTML = '<i class="story-card-icone fas fa-bookmark "></i>';
+          const bookmarksToChange = document.querySelectorAll(`[data-story-id="${bookmark.dataset.storyId}"]`);
+          bookmarksToChange.forEach((bookmarkToChange) => {
+            bookmarkToChange.dataset.id = data.id
+            const iToChange = bookmarkToChange.firstElementChild;
+            iToChange.classList.remove("far");
+            iToChange.classList.add("fas");
+            // bookmarkToChange.innerHTML = '<i class="story-card-icone fas fa-bookmark "></i>';
+          });
         })
       }
     });
