@@ -19,7 +19,7 @@
       <% if @searched_terms.any? || params[:vibration] %>
         <h2 class="title-carousel">Your results</h2>
         <div id='list' class='container'>
-          <%= render "list", searched_stories: @stories %>
+          <%= render "shared/list", searched_stories: @stories %>
         </div>
 
         <% if @stories.empty? %>
