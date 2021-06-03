@@ -12,14 +12,13 @@
           <h1 class="h1-author"><%= @author.username %></h1>
           <% unless current_user == @author %>
             <% if @current_user.is_favorite?(@author) %>
-              <%= link_to favorite_author_path(FavoriteAuthor.find_by(author_id: params[:id])), method: :delete do %>
-              <%#= link_to favorite_path(Favorite.find_by(story: story, user: current_user)), remote: true, method: :delete do %>
+              <span data-id= "<%= "#{FavoriteAuthor.find_by(author_id: @author.id, user: current_user).id}" %>" data-author-id="<%= "#{@author.id}" %>" class="favorite-author">
                 <i class="fas fa-star star-icone"></i>
-              <% end %>
+              </span>
             <% else %>
-              <%= link_to author_favorite_authors_path(@author), method: :post  do %>
+              <span class="favorite-author" data-author-id="<%= "#{@author.id}" %>" >
                 <i class="far fa-star star-icone"></i>
-              <% end %>
+              </span>
             <% end %>
           <% end %>
         </div>
