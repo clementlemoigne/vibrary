@@ -13,10 +13,15 @@
   box-shadow: $shadow;
 }
 
+
 input.form-control {
   border-color: $dark-rose;
   background-color: $light-blue;
   &:focus {
     background-color: $light-blue;
   }
+}
+
+input.search-bar {
+  background-color: white;
 }
