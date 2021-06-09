@@ -1,13 +1,17 @@
 .slides .story-card {
   margin: 0 10px;
+  min-width: 75%;
+}
+
+.list .story-card {
+  width: 100%;
 }
 
 .story-card {
-  // height: 40vh;
-  // border: 0.5mm solid $rose;
   border: 0.6mm solid $rose;
   border-radius: 8px;
   box-shadow: 2px 2px 8px rgba(218, 221, 223, 0.4);
+  display: flex;
   flex-direction: column;
   margin-bottom: 10px;
   padding: 16px;
