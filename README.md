@@ -1,1 +1,1 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+**Vibrary is a discreet online library hosting erotic texts that can be connected with your own sextoy** (vibration intensity managed according to the text).
