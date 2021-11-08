@@ -5,10 +5,8 @@
 <div class="content">
   <h2 class="title-carousel">Your stories</h2>
     <% unless @stories.empty? %>
-      <div id='list' class='container'>
-        <%= render "shared/list", searched_stories: @stories %>
-      </div>
-  <% else %>
+      <%= render "shared/list", stories: @stories %>
+    <% else %>
       <p class="m-2">You haven't written a story yet...</p>
     <% end %>
 </div>

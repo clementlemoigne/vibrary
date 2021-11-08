@@ -1,3 +1,5 @@
-<% searched_stories.each do |story| %>
-  <%= render "shared/story-card-2", story: story %>
-<% end %>
+<div class='container list col-12'>
+  <% stories.each do |story| %>
+    <%= render "shared/story-card", story: story%>
+  <% end %>
+</div>

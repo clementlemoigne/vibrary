@@ -18,19 +18,19 @@
 
       <% if @searched_terms.any? || params[:vibration] %>
         <h2 class="title-carousel">Your results</h2>
-        <div id='list' class='container'>
-          <%= render "shared/list", searched_stories: @stories %>
-        </div>
+        <%= render "shared/list", stories: @stories %>
 
         <% if @stories.empty? %>
           <p class="m-3"> No match found </p>
         <% end %>
 
       <% else %>
-        <div id="recommended" class="content-row">
-          <h2 class="title-carousel">Recommended for you</h2>
-          <%= render "shared/carousel-story-cards", stories: @recommended_stories %>
-        </div>
+        <% unless @recommended_stories.empty? %>
+          <div id="recommended" class="content-row">
+            <h2 class="title-carousel">Recommended for you</h2>
+            <%= render "shared/carousel-story-cards", stories: @recommended_stories %>
+          </div>
+        <% end %>
 
         <div id="best-rated" class="content-row">
           <h2 class="title-carousel">Best rated</h2>
